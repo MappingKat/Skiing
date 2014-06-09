@@ -18,8 +18,7 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(auth.info.email) || user = User.find_by_email(twitter_email) 
       user.provider = auth.provider
       user.uid = auth.uid
-      user.user_name = auth.info.nickname
-      user.profile_pic = auth.info.image
+      user.name = auth.info.nickname
       user
     else
       
