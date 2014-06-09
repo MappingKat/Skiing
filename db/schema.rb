@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609110152) do
+ActiveRecord::Schema.define(:version => 20140609111629) do
 
   create_table "profiles", :force => true do |t|
     t.string   "type"
@@ -23,6 +23,40 @@ ActiveRecord::Schema.define(:version => 20140609110152) do
     t.text     "bio"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "resorts", :force => true do |t|
+    t.string   "name"
+    t.string   "country"
+    t.string   "region"
+    t.string   "area"
+    t.text     "map"
+    t.text     "image"
+    t.string   "min_new_snow_24h"
+    t.string   "max_new_snow_24h"
+    t.integer  "min_average_base_depth"
+    t.integer  "max_average_base_depth"
+    t.boolean  "lift_status"
+    t.date     "forecast_date"
+    t.integer  "day_max_temp"
+    t.integer  "night_max_temp"
+    t.text     "night_weather_description"
+    t.text     "day_weather_description"
+    t.integer  "avalanche_warning"
+    t.integer  "day_min_temp"
+    t.integer  "night_min_temp"
+    t.integer  "daily_pass_adults"
+    t.integer  "daily_pass_kids"
+    t.integer  "six_days_pass_adults"
+    t.integer  "six_days_pass_kids"
+    t.string   "resort_type"
+    t.string   "resort_status"
+    t.text     "surface_conditions"
+    t.text     "snow_last_48hours"
+    t.text     "night_grooming"
+    t.text     "weather_forecast"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "users", :force => true do |t|
