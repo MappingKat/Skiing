@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Magic Mount
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+
+    .menu
+      - if current_user
+        %li
+          %label= current_user.email
+        %li= link_to "Sign out", destroy_user_session_path, method: :delete
+        %li= link_to('Edit Settings', edit_user_registration_path)        
+      - else
+        %li= link_to "Sign In", new_user_session_path
+        %li= link_to "Register", new_user_registration_path
+
+
+
+
+        
+    .main_section 
+      .login_alerts
+        %p.notice= notice # Needed for Devise to alert User
+        %p.alert= alert
+
+      = yield

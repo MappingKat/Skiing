@@ -41,7 +41,10 @@ test:
   encoding: unicode
   database: SkiApp_test
   pool: 5
+<<<<<<< HEAD
 
+=======
+>>>>>>> devise
 
 production:
   adapter: postgresql
