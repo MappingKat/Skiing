@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609112735) do
+ActiveRecord::Schema.define(:version => 20140609124419) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -38,6 +38,18 @@ ActiveRecord::Schema.define(:version => 20140609112735) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  create_table "resort_relationships", :force => true do |t|
+    t.integer  "instructor_id"
+    t.integer  "resort_id"
+    t.string   "instructor_state"
+    t.boolean  "favorite"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "resort_relationships", ["instructor_id"], :name => "index_resort_relationships_on_instructor_id"
+  add_index "resort_relationships", ["resort_id"], :name => "index_resort_relationships_on_resort_id"
 
   create_table "resorts", :force => true do |t|
     t.string   "name"
