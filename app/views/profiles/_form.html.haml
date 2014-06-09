@@ -1,0 +1,14 @@
+%h2 Set Profile
+  
+%div
+  = form_for @profile do |f|
+    - if @profile.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
+        %ul
+          - @profile.errors.full_messages.each do |msg|
+            %li= msg
+    %div
+      = f.select_tag(:city_id, options_for_select('Ski', 'Snowboard', 'Both')
+    %div
+      = f.submit "Save"
