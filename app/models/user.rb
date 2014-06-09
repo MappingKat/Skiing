@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :role
   # attr_accessible :title, :body
 
-  has_one :profile , dependent: :destroy
+  # has_one :profile , dependent: :destroy
   has_many :resort_relationships, foreign_key: :instructor_id
   has_many :comments, dependent: :destroy
 end
