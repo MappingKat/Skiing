@@ -13,3 +13,7 @@
       = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation"
     %div
       = f.submit "Sign up"
+
+  = link_to "Sign in with Twitter", user_omniauth_authorize_path('twitter')
+  = link_to "Sign in with Facebook", user_omniauth_authorize_path('facebook')
+

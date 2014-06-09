@@ -27,9 +27,8 @@ class User < ActiveRecord::Base
           test = User.create({
               :provider => auth.provider,
               :uid => auth.uid,
-              :user_name => auth.info.nickname,
+              :name => auth.info.nickname,
               :email => auth.info.nickname.downcase + "@twitter.com",
-              :profile_pic => auth.info.image, # comes in small
               :password => Devise.friendly_token[0,20]
           })
           
@@ -37,9 +36,8 @@ class User < ActiveRecord::Base
         where(auth.slice(:provider, :uid)).first_or_create do |user|
             user.provider = auth.provider
             user.uid = auth.uid
-            user.user_name = auth.info.nickname
+            user.name = auth.info.nickname
             user.email = auth.info.email
-            user.profile_pic = auth.info.image # comes in small
             user.password = Devise.friendly_token[0,20]
         end
       end 
