@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
 
   has_one :profile , dependent: :destroy
   has_many :resort_relationships, foreign_key: :instructor_id
+  has_many :comments, dependent: :destroy
 end

@@ -4,5 +4,6 @@ class Resort < ActiveRecord::Base
   acts_as_commentable
 
   has_many :resort_relationships
+  has_many :instructors, through: :resort_relationships
 
 end
