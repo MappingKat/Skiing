@@ -5,5 +5,5 @@ class Resort < ActiveRecord::Base
 
   has_many :resort_relationships
   has_many :instructors, through: :resort_relationships
-
+ 
 end

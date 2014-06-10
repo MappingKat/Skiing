@@ -7,20 +7,26 @@
     = csrf_meta_tags
 
   %body
-
-    .menu
+  
+    .pure-menu.pure-menu-open
       - if current_user
-        %li
-          %label= current_user.email
-        %li= link_to "Sign out", destroy_user_session_path, method: :delete
-        %li= link_to('Edit Settings', edit_user_registration_path)    
-        %li= link_to('Show Profile', user_profile_path(current_user))
-
+        %a.pure-menu-heading Logo
+        %ul
+          %li
+            %label= current_user.email
+          %li
+            = link_to "Sign out", destroy_user_session_path, method: :delete
+          %li
+            = link_to('Edit Settings', edit_user_registration_path) 
+          %li
+            = link_to('Show Profile', user_profile_path(current_user))
       - else
-        %li= link_to "Sign In", new_user_session_path
-        %li= link_to "Register", new_user_registration_path
-
-
+        %a.pure-menu-heading Logo
+        %ul
+          %li
+            = link_to "Sign In", new_user_session_path
+          %li
+            = link_to "Register", new_user_registration_path 
 
 
         

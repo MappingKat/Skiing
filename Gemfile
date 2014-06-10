@@ -9,15 +9,15 @@ gem 'pg'
 gem 'haml-rails'
 gem "pure-css-rails"
 
-#  Gems for tagging, commenting and voting.
+# Gems for tagging, commenting and voting.
 
 gem 'acts_as_votable', '~> 0.9.0'
 gem 'acts_as_commentable', '~> 3.0.1'
 gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'
 
+# Gems to work with APIs
 
-
-#  Gems for data visualisation and front-end management.
+# Gems for data visualisation and front-end management.
 
 gem 'date-input-rails', '~> 0.0.3'
 gem 'ransack'
