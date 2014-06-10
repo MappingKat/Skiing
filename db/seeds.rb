@@ -15,3 +15,12 @@ end
 # Seeddata for resort setup
 
 url = 'http://skimap.org/SkiAreas/index.xml'
+response = HTTParty.get(url)
+ski_areas = response['skiAreas'] rescue nil
+ski_area = ski_areas['skiArea']
+
+names_of_areas = ski_area.map { |area| area['name'] }
+ids_of_areas = ski_area.map { |area| area['id'].to_i }
+
+names_of_areas.each { |name| Resort.create(name: name) }
+# ids_of_areas.each { |id| Resort.update_all(area_id: id) }
