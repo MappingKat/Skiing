@@ -2,22 +2,17 @@
   
   %p
     = image_tag @profile.profile_picture.thumb.url
-    
+
   %p 
     = @profile.prefered 
 
   %p 
     = @profile.level 
 
-  %p 
-    = @profile.specialities 
-
-  %ul
-    %li  
-      = @profile.favorite_resorts
-
-  %p 
-    = @profile.state
+  %ul 
+    - @profile.specialities.each do |speciality|
+      %li 
+        = speciality.name
 
 = link_to 'Edit', edit_user_profile_path(@user)
 

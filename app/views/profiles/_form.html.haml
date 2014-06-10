@@ -19,16 +19,21 @@
       = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Austrian']))
 
     %div
-      = f.label :specialities, "Do you have any preferences or specialities?"  
-      = f.select(:specialities, options_for_select(['Off-Piste Adventure', 'Ski-Touring', 'Racing', 'Cross-Hill', 'None', ]))
+      = f.label :specialities, "Do you have any preferences or specialities?" 
+      = hidden_field_tag "profile[speciality_ids][]"
+      - for speciality in Speciality.all
+        = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
+        = speciality.name
 
-    %div
-      = f.label :favorite_resorts, "List your favorite resorts"
-      = f.collection_select(:favorite_resorts, Resort.all, :id, :name)
+   /* TODO Add Resort model and instructors to form:
 
-    %div
-      = f.label :state, "Are you teaching or guiding others in the mountains?"      
-      = f.select(:state, options_for_select(['Skiing Instructor', 'Snowboard Instructor', 'Mountain Guide', 'None']))
+    / %div
+    /   = f.label :favorite_resorts, "List your favorite resorts"
+    /   = f.collection_select(:favorite_resorts, Resort.all, :id, :name)
+
+    / %div
+    /   = f.label :state, "Are you teaching or guiding others in the mountains?"      
+    /   = f.select(:state, options_for_select(['Skiing Instructor', 'Snowboard Instructor', 'Mountain Guide', 'None']))
 
     %div
       = f.submit "Save"

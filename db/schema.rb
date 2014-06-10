@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610131531) do
+ActiveRecord::Schema.define(:version => 20140610135711) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20140610131531) do
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "profile_specialities", :force => true do |t|
+    t.integer  "profile_id"
+    t.integer  "speciality_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "profile_specialities", ["profile_id"], :name => "index_profile_specialities_on_profile_id"
+  add_index "profile_specialities", ["speciality_id"], :name => "index_profile_specialities_on_speciality_id"
 
   create_table "profiles", :force => true do |t|
     t.string   "prefered"
@@ -84,6 +94,12 @@ ActiveRecord::Schema.define(:version => 20140610131531) do
     t.text     "weather_forecast"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "specialities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
