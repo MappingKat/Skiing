@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_many :resort_relationships, foreign_key: :instructor_id
   has_many :comments, dependent: :destroy
 
+  after_create :create_profile
+
   def self.from_omniauth(auth)
     twitter_email = if auth.info.nickname then auth.info.nickname.downcase + "@twitter.com" end
      
@@ -42,4 +44,11 @@ class User < ActiveRecord::Base
       end 
     end
   end
+
+  private
+  def create_profile
+    build_profile unless profile
+    profile.save
+  end
+
 end
