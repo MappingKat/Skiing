@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609161850) do
+ActiveRecord::Schema.define(:version => 20140610113720) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20140609161850) do
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "profiles", :force => true do |t|
-    t.string   "type"
+    t.string   "prefered"
     t.string   "level"
     t.string   "favorite_resorts"
     t.boolean  "off_piste"

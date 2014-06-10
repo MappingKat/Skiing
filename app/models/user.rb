@@ -47,8 +47,10 @@ class User < ActiveRecord::Base
 
   private
   def create_profile
-    build_profile unless profile
-    profile.save
+    unless profile
+      build_profile 
+      profile.save
+    end
   end
 
 end

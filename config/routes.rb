@@ -5,7 +5,7 @@ SkiApp::Application.routes.draw do
 
   resources :resorts
   resources :users do
-    resources :profiles
+    resource :profile, only: [:show, :edit, :update]
   end
 
   

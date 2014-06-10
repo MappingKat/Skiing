@@ -1,14 +1,34 @@
 %h2 Set Profile
   
 %div
-  = form_for @profile do |f|
-    - if @profile.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@profile.errors.count, "error")} prohibited this profile from being saved:"
-        %ul
-          - @profile.errors.full_messages.each do |msg|
-            %li= msg
+  = form_for @profile, url: user_profile_path(@user) do |f|
     %div
-      = f.select_tag(:city_id, options_for_select('Ski', 'Snowboard', 'Both')
+      = f.label :bio, "Biography"
+      = f.text_area :bio, placeholder: "Enter a short description about you and your powder skills"
+
+    %div
+      = f.label :picture, "Profile Picture"
+      = f.text_field :picture
+
+    %div
+      = f.label :prefered, "How do you ride?"   
+      = f.select(:prefered, options_for_select(['Ski', 'Snowboard', 'Both']))
+
+    %div
+      = f.label :level, "What's your current level?"      
+      = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Austrian']))
+
+    %div
+      = f.label :off_piste, "Do you go off-piste and/or ski-touring?"  
+      = f.select(:off_piste, options_for_select(['Yes', 'No']))
+
+    %div
+      = f.label :favorite_resorts, "List your favorite resorts"
+      = f.collection_select(:favorite_resorts, Resort.all, :id, :name)
+
+    %div
+      = f.label :state, "Are you teaching or guiding others in the mountains?"      
+      = f.select(:state, options_for_select(['Skiing Instructor', 'Snowboard Instructor', 'Mountain Guide', 'None']))
+
     %div
       = f.submit "Save"

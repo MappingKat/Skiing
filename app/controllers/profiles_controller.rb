@@ -1,16 +1,9 @@
 class ProfilesController < ApplicationController
-
-  def index
-    @profiles = Profile.all
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @profiles }
-    end
-  end
-
+  # urgent TODO: set up permissions so people can't edit others' profiles
+  
   def show
-    @profile = Profile.find(params[:id])
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
 
     respond_to do |format|
       format.html
@@ -19,15 +12,17 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
 
     respond_to do |format|
       if @profile.update_attributes(params[:profile])
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to user_profile_path(@user), notice: 'Profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
