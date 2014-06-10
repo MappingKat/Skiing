@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610113720) do
+ActiveRecord::Schema.define(:version => 20140610123841) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20140610113720) do
     t.string   "favorite_resorts"
     t.boolean  "off_piste"
     t.string   "state"
-    t.text     "picture"
+    t.string   "profile_picture"
     t.text     "bio"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false

@@ -1,5 +1,17 @@
-%p @profile.prefered
-
+.profile
+  %img 
+    = image_tag @profile.picture.url
+  %p 
+    = @profile.prefered
+  %p 
+    = @profile.level
+  %p 
+    = @profile.off_piste
+  %ul
+    %li  
+      = @profile.favorite_resorts
+  %p 
+    = @profile.state
 
 
 = link_to 'Edit', edit_user_profile_path(@user)
