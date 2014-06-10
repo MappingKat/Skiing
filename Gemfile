@@ -17,6 +17,9 @@ gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'
 
 # Gems to work with APIs
 
+gem 'json'
+gem 'httparty'
+
 # Gems for data visualisation and front-end management.
 
 gem 'date-input-rails', '~> 0.0.3'
