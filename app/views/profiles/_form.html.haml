@@ -7,8 +7,8 @@
       = f.text_area :bio, placeholder: "Enter a short description about you and your powder skills"
 
     %div
-      = f.label :picture, "Profile Picture"
-      = f.file_field :picture
+      = f.label :profile_picture, "Profile Picture"
+      = f.file_field :profile_picture
 
     %div
       = f.label :prefered, "How do you ride?"   
@@ -19,8 +19,8 @@
       = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Austrian']))
 
     %div
-      = f.label :off_piste, "Do you go off-piste and/or ski-touring?"  
-      = f.select(:off_piste, options_for_select(['Yes', 'No']))
+      = f.label :specialities, "Do you have any preferences or specialities?"  
+      = f.select(:specialities, options_for_select(['Off-Piste Adventure', 'Ski-Touring', 'Racing', 'Cross-Hill', 'None', ]))
 
     %div
       = f.label :favorite_resorts, "List your favorite resorts"
