@@ -68,7 +68,7 @@ class Resort < ActiveRecord::Base
     temperature_bottom = weather.first['bottom']
     self.button_max_temp = temperature_bottom.first['maxtempC']
     self.button_min_temp = temperature_bottom.first['mintempC']
-    self.button_max_temp_fahrenheit = temperature_bottom.first['mintempF']
+    self.button_max_temp_fahrenheit = temperature_bottom.first['maxtempF']
     self.button_min_temp_fahrenheit = temperature_bottom.first['mintempF']
 
     temperature_top = weather.first['top']
