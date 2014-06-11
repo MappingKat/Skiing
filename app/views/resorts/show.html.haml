@@ -1,21 +1,31 @@
 
-%p
-  = image_tag(@resort.map)
+.resort-show
+  .pure-g
+    .pure-u-1-2
+      .pure-img
+        = image_tag(@resort.map)
 
-%p 
-  = @resort.name
+    .pure-u-1-2
+      %h2
+        = @resort.name
+      %p 
+        = @resort.website
+      - unless @resort.run_count.nil?
+        %p
+          Run Count:
+          = @resort.run_count
+      - unless @resort.lift_count.nil?
+        %p
+          Lift Count:
+          = @resort.lift_count.any?
 
-%p 
-  = @resort.website
 
-%p 
-  = @resort.latitude
 
-%p 
-  = @resort.longitude
 
-%p 
-  = @resort.run_count
+
+
+
+
 
 %p
   max temp button
