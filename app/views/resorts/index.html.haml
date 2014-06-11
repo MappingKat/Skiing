@@ -1,1 +1,5 @@
-This is the index
+%p 
+  - @resorts.each do |resort|
+    %p 
+      = link_to resort.name, resort_path(resort)
+  

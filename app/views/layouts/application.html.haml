@@ -13,13 +13,15 @@
         %a.pure-menu-heading Logo
         %ul
           %li
-            %label= current_user.email
+            %label= current_user.name
           %li
             = link_to "Sign out", destroy_user_session_path, method: :delete
           %li
             = link_to('Edit Settings', edit_user_registration_path) 
           %li
             = link_to('Show Profile', user_profile_path(current_user))
+          %li
+            = link_to('Resorts', resorts_path)
       - else
         %a.pure-menu-heading Logo
         %ul

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610191448) do
+ActiveRecord::Schema.define(:version => 20140611153423) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -69,10 +69,6 @@ ActiveRecord::Schema.define(:version => 20140610191448) do
     t.string   "area"
     t.text     "map"
     t.text     "image"
-    t.string   "min_new_snow_24h"
-    t.string   "max_new_snow_24h"
-    t.integer  "min_average_base_depth"
-    t.integer  "max_average_base_depth"
     t.boolean  "lift_status"
     t.date     "forecast_date"
     t.integer  "day_max_temp"
@@ -92,11 +88,55 @@ ActiveRecord::Schema.define(:version => 20140610191448) do
     t.text     "snow_last_48hours"
     t.text     "night_grooming"
     t.text     "weather_forecast"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "area_id"
+    t.string   "website"
+    t.integer  "lift_count"
+    t.integer  "run_count"
+    t.boolean  "requested",                  :default => false
+    t.integer  "button_max_temp"
+    t.integer  "button_min_temp"
+    t.integer  "top_max_temp"
+    t.integer  "top_min_temp"
+    t.integer  "chance_of_snow"
+    t.integer  "total_snow_fall"
+    t.integer  "button_max_temp_fahrenheit"
+    t.integer  "button_min_temp_fahrenheit"
+    t.integer  "top_max_temp_fahrenheit"
+    t.integer  "top_min_temp_fahrenheit"
+    t.string   "day_zero_day_title"
+    t.string   "day_zero_day_text"
+    t.string   "day_one_day_title"
+    t.string   "day_one_day_text"
+    t.string   "day_two_day_title"
+    t.string   "day_two_day_text"
+    t.string   "day_three_day_title"
+    t.string   "day_three_day_text"
+    t.string   "day_four_day_title"
+    t.string   "day_four_day_text"
+    t.string   "day_five_day_title"
+    t.string   "day_five_day_text"
+    t.string   "day_six_day_title"
+    t.string   "day_six_day_text"
+    t.string   "day_seven_day_title"
+    t.string   "day_seven_day_text"
+    t.string   "day_zero_night_title"
+    t.string   "day_zero_night_text"
+    t.string   "day_one_night_title"
+    t.string   "day_one_night_text"
+    t.string   "day_two_night_title"
+    t.string   "day_two_night_text"
+    t.string   "day_three_night_title"
+    t.string   "day_three_night_text"
+    t.string   "day_four_night_title"
+    t.string   "day_four_night_text"
+    t.string   "day_five_night_title"
+    t.string   "day_five_night_text"
+    t.string   "day_six_night_title"
+    t.string   "day_six_night_text"
   end
 
   create_table "specialities", :force => true do |t|
