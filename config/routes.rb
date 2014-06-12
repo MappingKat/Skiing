@@ -9,6 +9,7 @@ SkiApp::Application.routes.draw do
 
   resources :resorts do
     get 'page/:page', action: :index, on: :collection
+    resources :comments
   end
 
   resources :users do
