@@ -1,0 +1,42 @@
+.pure-g
+  .pure-u-1-3
+    %p
+      Valley Temp:
+      %strong
+        = @resort.button_min_temp
+      to
+      %strong
+        = @resort.button_max_temp
+      °C
+      or
+      %strong
+        = @resort.button_min_temp_fahrenheit
+      to
+      %strong
+        = @resort.button_max_temp_fahrenheit
+      °F
+    %p
+      Mountain Temp:
+      %strong
+        = @resort.top_min_temp
+      to
+      %strong
+        = @resort.top_max_temp
+      °C
+      or
+      %strong
+        = @resort.top_min_temp_fahrenheit
+      to
+      %strong
+        = @resort.top_max_temp_fahrenheit
+      °F
+    %p
+      Chances of Snow in %:
+      %strong
+        = @resort.chance_of_snow
+      
+    %p
+      Total Snow Fall:
+      %strong
+        = @resort.total_snow_fall
+      cm

@@ -1,0 +1,11 @@
+.pure-g
+  .pure-u-1-2
+    = form_for([@resort, @comment]) do |f|
+      = f.text_area :comment, {placeholder: "Add a comment..."}
+      = f.hidden_field :user_id, value: current_user.id
+      = f.hidden_field :commentable_type, value: "Resort"
+      = f.submit 'Add Comment'
+.pure-g
+  .pure-u-1-2
+    -if @resort.comments.any?
+      =render @resort.comments[0...@resort.comments.count]

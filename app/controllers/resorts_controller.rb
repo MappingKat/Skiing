@@ -8,6 +8,7 @@ class ResortsController < ApplicationController
   def show
     @resort = Resort.find_or_update(params[:id])
     @resort = Resort.request_weather(params[:id])
+    @comment = @resort.comments.new
   end
 
   def destroy

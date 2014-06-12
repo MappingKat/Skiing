@@ -4,13 +4,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:twitter, :facebook]
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :role, :uid, :provider
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :role, :uid, :provider, :flaggable, :flagger, :flag
 
   has_one :profile , dependent: :destroy
   has_many :resort_relationships, foreign_key: :instructor_id
   has_many :comments, dependent: :destroy
+
+  make_flagger
 
   after_create :create_profile
 
