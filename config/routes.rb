@@ -1,12 +1,21 @@
 SkiApp::Application.routes.draw do
+  get "home/index"
+
   devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
 
-  root to: "resorts#index"
+  resources :home, only: [:index], as: '/' do
+    get 'page/:page', action: :index, on: :collection
+  end
 
-  resources :resorts
+  resources :resorts do
+    get 'page/:page', action: :index, on: :collection
+  end
+
   resources :users do
     resource :profile, only: [:show, :edit, :update]
   end
+
+  root to: "home#index"
 
   
   # The priority is based upon order of creation:

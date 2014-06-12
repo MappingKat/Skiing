@@ -132,6 +132,9 @@ GEM
       railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (2.7.7)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -293,6 +296,7 @@ DEPENDENCIES
   httparty
   jquery-rails
   json
+  kaminari
   make_flaggable!
   omniauth
   omniauth-facebook
