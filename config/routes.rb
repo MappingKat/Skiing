@@ -9,7 +9,12 @@ SkiApp::Application.routes.draw do
 
   resources :resorts do
     get 'page/:page', action: :index, on: :collection
-    resources :comments
+    resources :comments do
+      member do
+        get 'inappropriate'
+        delete 'delete_inappropriate', as: :delete_inappropriate
+      end
+    end
   end
 
   resources :users do
