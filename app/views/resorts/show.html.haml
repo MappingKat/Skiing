@@ -18,13 +18,15 @@
         %p
           Lift Count:
           = @resort.lift_count
-        %p
-          .like
-            - if current_user.liked? @album
-              = render :partial => 'unlike'
-            - else
-              = render :partial => 'like'
-        
+      %p
+        .like
+          - if current_user.liked? @resort
+            = render :partial => 'unlike'
+          - else
+            = render :partial => 'like'
+      %p
+        .total_likes
+          = render :partial => 'total_likes'
 
 .weather-show
   = render :partial => 'weather'

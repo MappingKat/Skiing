@@ -1,0 +1,7 @@
+- if current_user.liked? @resort
+  var likesHTML = ("#{escape_javascript(render :partial => 'unlike')}");
+- else current_user.disliked? @resort
+  var likesHTML = ("#{escape_javascript(render :partial => 'like')}");
+
+$(".like").html("#{escape_javascript(render :partial => 'total_likes')}");
+$(".total_likes").html(likesHTML);

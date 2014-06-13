@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   make_flagger
+  acts_as_voter
+
 
   after_create :create_profile
 
