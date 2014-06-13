@@ -11,7 +11,7 @@ gem "pure-css-rails"
 
 # Gems for tagging, commenting and voting.
 
-gem 'acts_as_votable', '~> 0.9.0'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable', '~> 3.0.1'
 gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'
 

@@ -18,4 +18,19 @@ class ResortsController < ApplicationController
     redirect_to(resorts_path)
   end
 
+  def like
+    @resort = Resort.find(params[:id])
+    @like = @resort.liked_by current_user 
+
+    redirect_to @resort, notice: "Liked!"
+  end
+
+  def unlike
+    @resort = Resort.find(params[:id])
+    @unlike = @resort.downvote_from current_user
+
+    redirect_to @resort, notice: "Unliked!"
+  end
+
+
 end
