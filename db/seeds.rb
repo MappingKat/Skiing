@@ -12,13 +12,13 @@
   Speciality.create!( name: speciality )
 end 
 
-# Seeddata for resort setup
-
-# TODO: add validations (uniqueness)
-
+# Seeddata for resort setup - TODO: define rake task
 url = 'http://skimap.org/SkiAreas/index.xml'
 response = HTTParty.get(url)
 ski_areas = response['skiAreas'] rescue nil
 ski_area = ski_areas['skiArea']
 
-ski_area.each { |area| Resort.create!(name: area['name'], area_id: area['id'] ) }
+ski_area.each do |area| 
+  r = Resort.create!(name: area['name'], area_id: area['id'] ) 
+  r.search_skiarea
+end

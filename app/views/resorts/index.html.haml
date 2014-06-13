@@ -1,3 +1,9 @@
+= javascript_tag do
+  window.resorts = #{raw @all_resorts.to_json}
+
+.map-show
+  = render :partial => 'map'
+
 %p 
   - @resorts.each do |resort|
     %p 

@@ -1,8 +1,9 @@
-#search
-  = search_form_for @q do |f|
-    %p
-      = f.label :name_cont
-      = f.text_field :name_cont
-    %p
-      = f.submit
+.pure-g
+  .pure-u-5-5
+    #search
+      = search_form_for @q do |f|
+        %p
+          - f.label :name_cont
+          = f.text_field :name_cont, placeholder: "Resort Name or Area"
+          = f.submit
 

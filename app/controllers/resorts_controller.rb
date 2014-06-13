@@ -2,7 +2,8 @@ class ResortsController < ApplicationController
   
   def index
     @q = Resort.search(params[:q])
-    @resorts = @q.result(:distinct => true).order(:created_at).page(params[:page])
+    @all_resorts = @q.result(:distinct => true).order(:created_at)
+    @resorts = @all_resorts.page(params[:page])
   end
 
   def show

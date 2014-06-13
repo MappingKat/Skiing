@@ -4,6 +4,7 @@
     %title We Are
     %meta{charset: "utf-8"}/
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    %script{src: "https://maps.googleapis.com/maps/api/js?key=AIzaSyA77x4_6dcnzuaQZfq5QvJcae6a72RMGTg&sensor=FALSE", type: "text/javascript"}
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -12,7 +13,7 @@
 
   %body
   
-    .pure-menu.pure-menu-open
+    .pure-menu.pure-menu-open.pure-menu-horizontal
       - if current_user
         %a.pure-menu-heading Logo
         %ul
@@ -42,3 +43,5 @@
         %p.alert= alert
 
       = yield
+
+      = yield :map_javascript
