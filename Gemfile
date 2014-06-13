@@ -7,7 +7,6 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 gem 'haml-rails'
-gem "pure-css-rails"
 
 # Gems for tagging, commenting and voting.
 

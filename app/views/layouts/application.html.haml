@@ -13,35 +13,34 @@
 
   %body
   
-    .pure-menu.pure-menu-open.pure-menu-horizontal
-      - if current_user
-        %a.pure-menu-heading Logo
-        %ul
-          %li
-            %label= current_user.name
-          %li
-            = link_to "Sign out", destroy_user_session_path, method: :delete
-          %li
-            = link_to('Edit Settings', edit_user_registration_path) 
-          %li
-            = link_to('Show Profile', user_profile_path(current_user))
-          %li
-            = link_to('Resorts', resorts_path)
-      - else
-        %a.pure-menu-heading Logo
-        %ul
-          %li
-            = link_to "Sign In", new_user_session_path
-          %li
-            = link_to "Register", new_user_registration_path 
+    .pure-g
+      .pure-u-1-1 
+        .menu
+          - if current_user
+            %ul
+              %li
+                %label
+                  hi,
+                  = current_user.name.downcase
+              %li
+                = link_to "sign out", destroy_user_session_path, method: :delete
+              %li
+                = link_to('edit settings', edit_user_registration_path) 
+              %li
+                = link_to('show profile', user_profile_path(current_user))
+              %li
+                = link_to('resorts', resorts_path)
+          - else
+            %ul
+              %li
+                = link_to "sign in", new_user_session_path
+              %li
+                = link_to "register", new_user_registration_path 
+        .main_section 
+          .login_alerts
+            %p.notice= notice # Needed for Devise to alert User
+            %p.alert= alert
 
+          = yield
 
-        
-    .main_section 
-      .login_alerts
-        %p.notice= notice # Needed for Devise to alert User
-        %p.alert= alert
-
-      = yield
-
-      = yield :map_javascript
+          = yield :map_javascript
