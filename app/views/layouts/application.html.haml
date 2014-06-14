@@ -14,20 +14,24 @@
   %body
   
     .pure-g
-      .pure-u-1-1 
+      .pure-u-1-1
         .menu
           - if current_user
+            #profile_pic_layout
+              - if current_user.profile.profile_picture
+                %img{src: current_user.profile.profile_picture.icon}
+                %br
+                %p
+                  %label
+                    hi,
+                    = current_user.name.downcase
             %ul
-              %li
-                %label
-                  hi,
-                  = current_user.name.downcase
               %li
                 = link_to 'search', "/"
               %li
                 = link_to('resorts', resorts_path)
               %li
-                = link_to('my account', user_profile_path(current_user))
+                = link_to('my profile', user_profile_path(current_user))
               %li
                 = link_to "sign out", destroy_user_session_path, method: :delete 
           - else

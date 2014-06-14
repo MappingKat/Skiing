@@ -1,29 +1,31 @@
-%h2 Set Profile
+.set_profile
+  %h1 Set Profile
 
-%div.pure-form.pure-form-stacked.pure-form-aligned
-  = form_for @profile, url: user_profile_path(@user) do |f|
-    %div
-      = f.label :bio, "Biography"
-      = f.text_area :bio, placeholder: "Enter a short description about you and your powder skills"
+  %div.pure-form.pure-form-stacked.pure-form-aligned
+    = form_for @profile, url: user_profile_path(@user) do |f|
+      .set_profile_form
+        %div.set_profile_form_fields
+          = f.label :profile_picture, "Upload Profile Pic"  
+          = f.file_field :profile_picture
 
-    %div
-      = f.label :profile_picture, "Profile Picture"
-      = f.file_field :profile_picture
+        %div.set_profile_form_fields
+          = f.label :prefered, "Skier or Boarder?"   
+          = f.select(:prefered, options_for_select(['Ski', 'Snowboard', 'Ski and Snowboard']))
 
-    %div
-      = f.label :prefered, "How do you ride?"   
-      = f.select(:prefered, options_for_select(['Ski', 'Snowboard', 'Both']))
+        %div.set_profile_form_fields
+          = f.label :level, "What's your current level?"      
+          = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Expert']))
 
-    %div
-      = f.label :level, "What's your current level?"      
-      = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Austrian']))
+        %div.set_profile_form_fields
+          = f.label :profile_picture, "Powder Biography"
+          = f.text_area :bio, :size => "50x10", placeholder: "Enter a short description about you and your powder skills"        
 
-    %div
-      = f.label :specialities, "Do you have any preferences or specialities?" 
-      = hidden_field_tag "profile[speciality_ids][]"
-      - for speciality in Speciality.all
-        = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
-        = speciality.name
+        %div.set_profile_form_fields
+          = f.label :specialities, "Do you have any preferences or specialities?" 
+          = hidden_field_tag "profile[speciality_ids][]"
+          - for speciality in Speciality.all
+            = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
+            = speciality.name
 
-    %div
-      = f.submit "SAVE", :id => 'input_button_sign_up', :class => 'pure-input-rounded'
+        %div.set_profile_submit_button
+          = f.submit "SAVE", :id => 'input_button_set_profile', :class => 'pure-input-rounded'
