@@ -14,6 +14,6 @@
       %li 
         = speciality.name
 
-= link_to 'Edit', edit_user_profile_path(@user)
-
-= link_to 'Back', user_profile_path(@user)
+= link_to 'edit profile', edit_user_profile_path(@user)
+= link_to('edit settings', edit_user_registration_path)
+= link_to 'back', user_profile_path(@user)

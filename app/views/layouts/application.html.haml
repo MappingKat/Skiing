@@ -23,13 +23,13 @@
                   hi,
                   = current_user.name.downcase
               %li
-                = link_to "sign out", destroy_user_session_path, method: :delete
-              %li
-                = link_to('edit settings', edit_user_registration_path) 
-              %li
-                = link_to('show profile', user_profile_path(current_user))
+                = link_to 'search', "/"
               %li
                 = link_to('resorts', resorts_path)
+              %li
+                = link_to('my account', user_profile_path(current_user))
+              %li
+                = link_to "sign out", destroy_user_session_path, method: :delete 
           - else
             %ul
               %li

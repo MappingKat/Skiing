@@ -13,12 +13,12 @@
 end 
 
 # Seeddata for resort setup - TODO: define rake task
-url = 'http://skimap.org/SkiAreas/index.xml'
-response = HTTParty.get(url)
-ski_areas = response['skiAreas'] rescue nil
-ski_area = ski_areas['skiArea']
+# url = 'http://skimap.org/SkiAreas/index.xml'
+# response = HTTParty.get(url)
+# ski_areas = response['skiAreas'] rescue nil
+# ski_area = ski_areas['skiArea']
 
-ski_area.each do |area| 
-  r = Resort.create!(name: area['name'], area_id: area['id'] ) 
-  r.search_skiarea
-end
+# ski_area.each do |area| 
+#   r = Resort.create!(name: area['name'], area_id: area['id'] ) 
+#   r.search_skiarea
+# end

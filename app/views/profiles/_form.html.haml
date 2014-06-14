@@ -1,6 +1,6 @@
 %h2 Set Profile
-  
-%div
+
+%div.pure-form.pure-form-stacked.pure-form-aligned
   = form_for @profile, url: user_profile_path(@user) do |f|
     %div
       = f.label :bio, "Biography"
@@ -25,15 +25,5 @@
         = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
         = speciality.name
 
-   /* TODO Add Resort model and instructors to form:
-
-    / %div
-    /   = f.label :favorite_resorts, "List your favorite resorts"
-    /   = f.collection_select(:favorite_resorts, Resort.all, :id, :name)
-
-    / %div
-    /   = f.label :state, "Are you teaching or guiding others in the mountains?"      
-    /   = f.select(:state, options_for_select(['Skiing Instructor', 'Snowboard Instructor', 'Mountain Guide', 'None']))
-
     %div
-      = f.submit "Save"
+      = f.submit "SAVE", :id => 'input_button_sign_up', :class => 'pure-input-rounded'

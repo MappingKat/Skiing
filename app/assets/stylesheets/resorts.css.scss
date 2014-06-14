@@ -45,6 +45,40 @@ body {
       }
     }
   }
+  #sign-up {
+    .pure-form {
+      input {
+        font-size: 22px;
+        padding: 0.25%;
+        margin: 0.75%;
+      }
+      #input_button_sign_up {
+        color: #fff;
+        font-size: 16px;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+        padding-top: 0.25%;
+        padding-bottom: 0.25%;
+      }
+    }
+  }
+  #sign-in {
+    .pure-form {
+      input {
+        font-size: 22px;
+        padding: 0.25%;
+        margin: 0.75%;
+      }
+      #input_button_sign_in {
+        color: #fff;
+        font-size: 16px;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+        padding-top: 0.25%;
+        padding-bottom: 0.25%;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -63,9 +97,24 @@ body {
     h1 {
       font-size: 36px;
     }
+    h2 {
+      font-size: 24px;
+    }
     #search {
+      .pure-form {
+        input {
+          font-size: 24px;
+        }
+      }
+    }  
+    #sign-up {
       input {
-        font-size: 22px;
+        font-size: 16px;
+      }
+    }
+    #sign-in {
+      input {
+        font-size: 16px;
       }
     }
   }
@@ -83,10 +132,29 @@ body {
     h1 {
       font-size: 24px;
     }
+    h2 {
+      font-size: 18px;
+    }
     #search {
-      input {
-        font-size: 16px;
-      }
+      .pure-form {
+        input {
+          font-size: 18px;
+        }
+      }  
+    }
+    #sign-up {
+      .pure-form {
+        input {
+          font-size: 18px;
+        }
+      }  
+    }
+    #sign-in {
+      .pure-form {
+        input {
+          font-size: 18px;
+        }
+      }  
     }
   }
 }
