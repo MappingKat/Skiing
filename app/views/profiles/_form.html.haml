@@ -27,5 +27,12 @@
             = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
             = speciality.name
 
+        %div.set_profile_form_fields
+          = f.label :resorts, "What are your favorite resorts?" 
+          = hidden_field_tag "profile[resort_ids][]"
+          - for resort in Resort.all
+            = check_box_tag "profile[resort_ids][]", resort.id, @profile.resorts.include?(resort)
+            = resort.name
+
         %div.set_profile_submit_button
           = f.submit "SAVE", :id => 'input_button_set_profile', :class => 'pure-input-rounded'

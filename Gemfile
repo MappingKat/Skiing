@@ -8,11 +8,12 @@ gem 'rails', '3.2.18'
 gem 'pg'
 gem 'haml-rails'
 
-# Gems for tagging, commenting and voting.
+# Gems for forum, commenting and voting.
 
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable', '~> 3.0.1'
 gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'
+gem 'forem', :github => "radar/forem", :branch => "rails3"
 
 # Gems to work with APIs
 

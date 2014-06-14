@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
 
   after_create :create_profile
 
+  def forem_name
+    name
+  end
+
   def self.from_omniauth(auth)
     twitter_email = if auth.info.nickname then auth.info.nickname.downcase + "@twitter.com" end
      
