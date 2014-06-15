@@ -9,42 +9,45 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-
-
   %body
-  
-    .pure-g
-      .pure-u-1-1
-        .menu
-          - if current_user
-            #profile_pic_layout
-              - if current_user.profile.profile_picture
-                %img{src: current_user.profile.profile_picture.icon}
-                %br
-                %p
-                  %label
-                    hi,
-                    = current_user.name.downcase
-            %ul
-              %li
-                = link_to 'search', "/"
-              %li
-                = link_to('resorts', resorts_path)
-              %li
-                = link_to('my profile', user_profile_path(current_user))
-              %li
-                = link_to "sign out", destroy_user_session_path, method: :delete 
-          - else
-            %ul
-              %li
-                = link_to "sign in", new_user_session_path
-              %li
-                = link_to "register", new_user_registration_path 
-        .main_section 
-          .login_alerts
-            %p.notice= notice # Needed for Devise to alert User
-            %p.alert= alert
+    .menu
+      - if current_user
+        #profile_pic_layout
+          - if current_user.profile.profile_picture
+            %img{src: current_user.profile.profile_picture.icon}
+            %br
+            %p
+              %label
+                hi,
 
-          = yield
+        #logo
+          
+          #sign_out
+            = link_to image_tag('/assets/sign-out.png'), destroy_user_session_path, method: :delete
+          %p
+            = image_tag("/assets/logo.png")
+            
 
-          = yield :map_javascript
+          %ul
+            %li
+              = link_to 'search', "/"
+            %li
+              = link_to('resorts', resorts_path)
+            %li
+              = link_to('my profile', user_profile_path(current_user))
+              
+      - else
+        %ul
+          %li
+            = link_to "sign in", new_user_session_path
+          %li
+            = link_to "register", new_user_registration_path 
+    
+    .main_section 
+      .login_alerts
+        %p.notice= notice # Needed for Devise to alert User
+        %p.alert= alert
+
+      = yield
+
+      = yield :map_javascript

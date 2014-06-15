@@ -1,21 +1,38 @@
 * {
-  font-family: DIN Alternate Bold, Helvetica, Arial, sans-serif;
+  font-family: DINBol, Helvetica, Arial, sans-serif;
 }
 
 body {
-  padding: 5%;
   text-align: center;
-}
+}   
 
 .menu {
+  padding-left: 2%;
+  padding-right: 2%;
+  #logo {
+    #sign_out {
+      float: left;
+    }
+    p {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 20%;
+      }
+    } 
+  }
+
+
   #profile_pic_layout {
     img, label { 
     border-radius: 50%;
     float: right; }
     label {
-      color: #F0F;
+      color: #FF00DE;
       font-weight: bold;
       padding-right: 1%;
+      font-size: 66px;
     }
     img {
       margin-top: 2.5%;
@@ -32,7 +49,7 @@ body {
         color: #000;
       }
       a:hover {
-        color: #F0F;
+        color: #FF00DE;
       }
     }
   }
@@ -40,9 +57,6 @@ body {
 
 
 .main_section {
-  h1 {
-    font-size: 52px;
-  }
   .set_profile {
     width: 40%;
     margin-left: auto;
@@ -111,7 +125,7 @@ body {
                 text-align: center;
               }
               td {
-                color: #F0F;
+                color: #FF00DE;
               } 
             }
           }
@@ -160,20 +174,33 @@ body {
       }  
     }
   }
-  #search {
-    .pure-form {
-      input {
-        font-size: 32px;
-        padding: 0.5%;
-        margin: 1.5%;
+  #homepage {
+    background-image: url('/assets/skiers.jpg');
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 25%;
+    h1 {
+      font-size: 72px;
+      span.magenta {
+        color: #FF00DE;
       }
-      #input_button {
-        color: #fff;
-        font-size: 22px;
-        padding-left: 3%;
-        padding-right: 3%;
-        padding-top: 0.5%;
-        padding-bottom: 0.5%;
+    }
+    #search {
+      .pure-form {
+        input {
+          font-size: 26px;
+          padding: 0.5%;
+          margin: 1.5%;
+          text-align: left;
+        }
+        #input_button {
+          color: #fff;
+          font-size: 22px;
+          padding-left: 3%;
+          padding-right: 3%;
+          padding-top: 0.5%;
+          padding-bottom: 0.5%;
+        }
       }
     }
   }
@@ -212,10 +239,14 @@ body {
     }
   }
   #profile_show {
-    margin-top: 5%;
-    h2 {
-      color: #F0F;
+    background-image: url('/assets/skiers.jpg');
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 25%;
+    h1 {
+      color: #FF00DE;
       margin-bottom: 3%;
+      font-size: 42px;
     }
     .profile_show_links {
       float: right;
@@ -239,9 +270,13 @@ body {
             background-color: #eee;
             tr {
               border-bottom: solid #fff 1px;
-              td {
-                padding: 4%;
+              td, th {
+                padding: 2%;
+                text-align: left;
               }
+            }
+            tr:last-child {
+              border-bottom: none;
             }
           }
         }
@@ -327,6 +362,8 @@ body {
     }
   }
 }
+
+
 
 #map_canvas {
   display: inline-block;
