@@ -1,19 +1,46 @@
-.profile
-  
-  %p
-    = image_tag @profile.profile_picture.thumb.url
+#profile_show
+  %h2 
+    = current_user.name.upcase
+  .profile_show_links
+    %ul
+      %li
+        = link_to 'edit profile', edit_user_profile_path(@user)
+      %li
+        = link_to('edit settings', edit_user_registration_path)
+  .pure-g.profile_show
+    .pure-u-1-3
+      .profile_picture
+        = image_tag @profile.profile_picture.thumb.url
+        %br
+        
+    .pure-u-2-3
+      .profile_show
+        %table
+          %tr
+          %tc
+            %th
+              Skiing vs. Snowboarding
+            %td
+              = @profile.prefered
+          %tr
+          %tc 
+            %th 
+              Level
+            %td 
+              = @profile.level
+          %tr
+          %tc
+            %th
+              Specialities
+            %td
+              - @profile.specialities.each do |speciality|
+                = speciality.name
+          %tr
+          %tc
+            %th
+              Favorite Resorts
+            %td
+              - @profile.resorts.each do |resort|
+                = resort.name
 
-  %p 
-    = @profile.prefered 
-
-  %p 
-    = @profile.level 
-
-  %ul 
-    - @profile.specialities.each do |speciality|
-      %li 
-        = speciality.name
-
-= link_to 'edit profile', edit_user_profile_path(@user)
-= link_to('edit settings', edit_user_registration_path)
-= link_to 'back', user_profile_path(@user)
+        

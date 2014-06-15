@@ -1,12 +1,17 @@
-= javascript_tag do
-  window.resorts = #{raw @all_resorts.to_json}
+#resort_index
+  .pure-g
+    .pure-u-1-2
+      = javascript_tag do
+        window.resorts = #{raw @all_resorts.to_json}
 
-.map-show
-  = render :partial => 'map'
+      .map-show
+        = render :partial => 'map'
 
-%p 
-  - @resorts.each do |resort|
-    %p 
-      = link_to resort.name, resort_path(resort)
-  
-  = paginate @resorts
+    .pure-u-1-2
+      %ul 
+        - @resorts.each do |resort|
+          %li 
+            = link_to resort.name, resort_path(resort)
+            = resort.get_likes.size
+        
+        = paginate @resorts
