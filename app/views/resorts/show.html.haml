@@ -1,40 +1,46 @@
 .resort_show
-  .pure-g
-    .pure-u-1-2
-      .pure-img
-        = image_tag(@resort.map)
+  %nav.L-1-1
+    %ul.L-1-1
+      %li
+        %a#nav_one.L-3-12.gutters{href: "#one"} overview
+      %li
+        %a#nav_two.L-3-12.gutters{href: "#two"} reviews
+      %li
+        %a#nav_three.L-3-12.gutters{href: "#three"} weather
+  %section#one.one.overview
+    .pure-img
+      = image_tag(@resort.map)
 
-    .pure-u-1-2
-      %h2
-        = @resort.name
-      %p 
-        = link_to @resort.website, "#{@resort.website}"
-      - unless @resort.run_count.nil?
-        %p
-          Run Count:
-          = @resort.run_count
-      - unless @resort.lift_count.nil?
-        %p
-          Lift Count:
-          = @resort.lift_count
+    %h2
+      = @resort.name
+    %p 
+      = link_to @resort.website, "#{@resort.website}"
+    - unless @resort.run_count.nil?
       %p
-        .like
-          - if current_user.liked? @resort
-            = render :partial => 'unlike'
-          - else
-            = render :partial => 'like'
+        Run Count:
+        = @resort.run_count
+    - unless @resort.lift_count.nil?
       %p
-        .total_likes
-          = render :partial => 'total_likes'
+        Lift Count:
+        = @resort.lift_count
+    %p
+      .like
+        - if current_user.liked? @resort
+          = render :partial => 'unlike'
+        - else
+          = render :partial => 'like'
+    %p
+      .total_likes
+        = render :partial => 'total_likes'
 
-.resort_show_weather_comment
-  .pure-g
-    .pure-u-1-2
-      .comment-show
-        = render :partial => 'comment'
-    .pure-u-1-2        
-      .weather-show
-        = render :partial => 'weather'
+  %section#two.two.reviews
+    .comment-show
+      = render :partial => 'comment'
+
+  %section#three.three.weather  
+    .weather-show
+      = render :partial => 'weather'
+
     
 
 

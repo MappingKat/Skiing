@@ -4,7 +4,12 @@
 
 body {
   text-align: center;
-}   
+  span.magenta {
+        color: #FF00DE;
+  }
+}
+
+
 
 .menu {
   padding-left: 2%;
@@ -91,13 +96,53 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  .weather-show {
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    #weather_overview {
-      .pure-g {
-        .pure-u-1-1 {
+
+  .resort_show {
+
+    nav {
+      background-color: #fff;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      z-index: 999999999;
+    }
+
+    nav a {
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      line-height: 2em;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: #FF00DE;
+    }
+
+    .active {
+      background: #ddd;
+    }
+
+    .overview {
+      background: #eee;
+    }
+
+    .reviews {
+      background: #fff;
+    }
+
+    .weather {
+      background: #fff;
+      .weather-show {
+        padding-top: 20px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15%;
+        #weather_overview {
+          h1 {
+            color: #FF00DE;
+          }
           table {
             background-color: #eee;
             tr {
@@ -106,38 +151,24 @@ body {
                 padding: 1%;
               }
               td {
-                padding: 3%;
+                padding: 1%;
+                width: 16%;
               }
             }
           }
         }
-      }
-    }
-    #weather_specific {
-      .pure-g {
-        .pure-u-1-1 {
-          table {
-            width: 100%;
-            margin-top: 5%;
-            text-align: center;
-            tr {
-              th {
-                text-align: center;
-              }
-              td {
-                color: #FF00DE;
-              } 
-            }
+        #weather_forecast {
+          background: #eee;
+          padding: 2%;
+          p {
+            font-size: 12px;
+            color: #FF00DE;
           }
         }
-      }
-    }
-    #weather_forecast {
-      p {
-        font-size: 12px;
       }
     }
   }
+ 
   .comment-show {
     #write_review {
       .pure-form.pure-form-stacked.pure-form-aligned {
@@ -181,9 +212,6 @@ body {
     padding-bottom: 25%;
     h1 {
       font-size: 72px;
-      span.magenta {
-        color: #FF00DE;
-      }
     }
     #search {
       .pure-form {
