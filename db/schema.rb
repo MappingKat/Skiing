@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140615122419) do
+ActiveRecord::Schema.define(:version => 20140615125318) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -265,6 +265,13 @@ ActiveRecord::Schema.define(:version => 20140615122419) do
     t.string   "icon_day_four"
     t.string   "icon_day_five"
     t.string   "icon_day_six"
+    t.string   "icon_night_zero"
+    t.string   "icon_night_one"
+    t.string   "icon_night_two"
+    t.string   "icon_night_three"
+    t.string   "icon_night_four"
+    t.string   "icon_night_five"
+    t.string   "icon_night_six"
   end
 
   create_table "specialities", :force => true do |t|
