@@ -95,10 +95,10 @@ class Resort < ActiveRecord::Base
     forecast_days[0..13].each_slice(2).each_with_index do  |(day, night), index|
       self.send("day_#{human_numbers[index]}_day_title=", day.title)
       self.send("day_#{human_numbers[index]}_day_text=", day.fcttext_metric)
-      self.send("icon_day_#{human_numbers[index]}=", day.icon)
+      self.send("icon_day_#{human_numbers[index]}=", day.icon_url)
       self.send("day_#{human_numbers[index]}_night_title=", night.title)
       self.send("day_#{human_numbers[index]}_night_text=", night.fcttext_metric)
-      self.send("icon_night_#{human_numbers[index]}=", night.icon)
+      self.send("icon_night_#{human_numbers[index]}=", night.icon_url)
     end
   end
 

@@ -1,5 +1,4 @@
-
-.resort-show
+.resort_show
   .pure-g
     .pure-u-1-2
       .pure-img
@@ -28,10 +27,14 @@
         .total_likes
           = render :partial => 'total_likes'
 
-.weather-show
-  = render :partial => 'weather'
-
-.comment-show
-  = render :partial => 'comment'
+.resort_show_weather_comment
+  .pure-g
+    .pure-u-1-2
+      .comment-show
+        = render :partial => 'comment'
+    .pure-u-1-2        
+      .weather-show
+        = render :partial => 'weather'
+    
 
 

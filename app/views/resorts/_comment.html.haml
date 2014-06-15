@@ -1,11 +1,13 @@
-.pure-g
-  .pure-u-1-2
+%h2 
+  Reviews
+#write_review
+  .pure-form.pure-form-stacked.pure-form-aligned
     = form_for([@resort, @comment]) do |f|
-      = f.text_area :comment, {placeholder: "Add a comment..."}
+      = f.text_area :comment, :size => "50x10", placeholder: "Add a Review..."
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :commentable_type, value: "Resort"
-      = f.submit 'Add Comment'
-.pure-g
-  .pure-u-1-2
+      = f.submit 'ADD REVIEW', :id => 'input_button_review', :class => 'pure-input-rounded'
+  
+  .comment_display
     -if @resort.comments.any?
       =render @resort.comments[0...@resort.comments.count]

@@ -1,14 +1,14 @@
-.pure-g
-  .pure-u-1-3
-    %a{href: user_profile_path(comment.user)}
-      .profile_pic
-        - if comment.user.profile.profile_picture.thumb
-          %img{src: comment.user.profile.profile_picture.thumb}
-    .cmnt_text
+#single_comment_display
+  .pure-g
+    .pure-u-1-4
       %a{href: user_profile_path(comment.user)}
         %p
           @
           = comment.user.name
+      %a{href: user_profile_path(comment.user)}
+        - if comment.user.profile.profile_picture.icon
+          %img{src: comment.user.profile.profile_picture.icon}
+    .pure-u-3-4
       %p= comment.comment
       - if comment.user != current_user
         - if comment.flagged?

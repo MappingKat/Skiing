@@ -77,6 +77,89 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+  .weather-show {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    #weather_overview {
+      .pure-g {
+        .pure-u-1-1 {
+          table {
+            background-color: #eee;
+            tr {
+              border-bottom: solid #fff 1px;
+              th {
+                padding: 1%;
+              }
+              td {
+                padding: 3%;
+              }
+            }
+          }
+        }
+      }
+    }
+    #weather_specific {
+      .pure-g {
+        .pure-u-1-1 {
+          table {
+            width: 100%;
+            margin-top: 5%;
+            text-align: center;
+            tr {
+              th {
+                text-align: center;
+              }
+              td {
+                color: #F0F;
+              } 
+            }
+          }
+        }
+      }
+    }
+    #weather_forecast {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .comment-show {
+    #write_review {
+      .pure-form.pure-form-stacked.pure-form-aligned {
+        #input_button_review {
+          color: #fff;
+          padding-left: 5%;
+          padding-right: 5%;
+          padding-top: 1%;
+          padding-bottom: 1%;
+        }
+      }
+      .comment_display {
+        margin-top: 5%;
+        background-color: #eee;
+        #single_comment_display {
+          border: solid #fff 1px;
+          padding: 2%;
+          text-align: left;
+          .pure-g {
+            .pure-u-1-4 {
+              a {
+                img {
+                  border-radius: 50%;
+                }
+              }
+            }
+            .pure-u-3-4 {
+              p {
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      }  
+    }
+  }
   #search {
     .pure-form {
       input {

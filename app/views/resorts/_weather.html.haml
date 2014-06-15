@@ -1,58 +1,115 @@
 %h2 
   = @resort.day_zero_day_title
   Weather
-.pure-g
-  .pure-u-1-6
-    %p
-      Valley Temp:
-      %h2
-        = @resort.button_min_temp 
-        \ —
-        = @resort.button_max_temp
-        °C
-      %strong
-        = @resort.button_min_temp_fahrenheit
-        \ —
-        = @resort.button_max_temp_fahrenheit
-      °F
-  .pure-u-1-6
-    %p
-      Mountain Temp:
-      %h2
-        = @resort.top_min_temp
-        to
-        = @resort.top_max_temp
-        °C
-      %strong
-        = @resort.top_min_temp_fahrenheit
-        \ —
-      %strong
-        = @resort.top_max_temp_fahrenheit
-      °F
-  .pure-u-1-6
-    %p
-      Chances of Snow:
-      %h2
-        = @resort.chance_of_snow
-        \ %
-  .pure-u-1-6
-    %p
-      Total Snow Fall:
-      %h2
-        = @resort.total_snow_fall
-        cm
-  .pure-u-1-6
-    %p
-      Day:
-      %h4
-        = @resort.icon_day_zero
-        = @resort.day_zero_day_text
-  .pure-u-1-6
-    %p
-      Night:
-      %h4
-        = @resort.icon_day_zero
-        = @resort.day_zero_night_text
+#weather_overview  
+  .pure-g
+    .pure-u-1-1
+      %table
+        %tr
+          %th
+            Day
+          %th
+            Night
+        %tr
+          %td 
+            = image_tag("#{@resort.icon_day_zero}")
+          %td
+            = image_tag("#{@resort.icon_night_zero}")
+        %tr
+          %td
+            = @resort.day_zero_day_text
+          %td  
+            = @resort.day_zero_night_text
+
+#weather_specific
+  .pure-g
+    .pure-u-1-1
+      %table
+        %tr  
+          %th
+            Chances of Snow
+          %th
+            Est. Total Snow Fall
+        %tr
+          %td
+            %h2
+              = @resort.chance_of_snow
+              \ %
+          %td
+            %h2
+              = @resort.total_snow_fall
+              cm
+      %table
+        %tr
+          %th
+            Valley Temp
+          %th
+            Mountain Temp
+        %tr
+          %td
+            %h2
+              = @resort.button_min_temp 
+              \ —
+              = @resort.button_max_temp
+              °C
+            %strong
+              = @resort.button_min_temp_fahrenheit
+              \ —
+              = @resort.button_max_temp_fahrenheit
+              °F
+          %td
+            %h2
+              = @resort.top_min_temp
+              \ —
+              = @resort.top_max_temp
+              °C
+            %strong
+              = @resort.top_min_temp_fahrenheit
+              \ —
+            %strong
+              = @resort.top_max_temp_fahrenheit
+              °F
+
+%h3 Forecast
+#weather_forecast
+  .pure-g
+    .pure-u-1-6
+      %p 
+        = @resort.day_one_day_title
+      = image_tag("#{@resort.icon_day_one}")
+      = image_tag("#{@resort.icon_night_one}")
+
+    .pure-u-1-6
+      %p 
+        = @resort.day_two_day_title
+      = image_tag("#{@resort.icon_day_two}")
+      = image_tag("#{@resort.icon_night_two}")
+
+    .pure-u-1-6
+      %p 
+        = @resort.day_three_day_title
+      = image_tag("#{@resort.icon_day_three}")
+      = image_tag("#{@resort.icon_night_three}")
+
+    .pure-u-1-6
+      %p 
+        = @resort.day_four_day_title
+      = image_tag("#{@resort.icon_day_four}")
+      = image_tag("#{@resort.icon_night_four}")
+
+    .pure-u-1-6
+      %p 
+        = @resort.day_five_day_title
+      = image_tag("#{@resort.icon_day_five}")
+      = image_tag("#{@resort.icon_night_five}")
+
+    .pure-u-1-6
+      %p 
+        = @resort.day_six_day_title
+      = image_tag("#{@resort.icon_day_six}")
+      = image_tag("#{@resort.icon_night_six}")
+
+
 
 
 
