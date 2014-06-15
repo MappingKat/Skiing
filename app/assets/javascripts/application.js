@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= jquery.scrollTo-1.4.3.1-min
+//= waypoints.min
 //= require map
 //= require_tree .
