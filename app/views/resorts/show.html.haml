@@ -8,30 +8,35 @@
       %li
         %a#nav_three.L-3-12.gutters{href: "#three"} weather
   %section#one.one.overview
-    .pure-img
-      = image_tag(@resort.map)
+    .overview-show
+      %h1
+        = @resort.name
+      %p 
+        = link_to @resort.website, "#{@resort.website}"
+      %p
+        .total_likes
+          = render :partial => 'total_likes'
+      - unless @resort.run_count.nil?
+        %p
+          Run Count:
+          = @resort.run_count
+      - unless @resort.lift_count.nil?
+        %p
+          Lift Count:
+          = @resort.lift_count
 
-    %h2
-      = @resort.name
-    %p 
-      = link_to @resort.website, "#{@resort.website}"
-    - unless @resort.run_count.nil?
+      .pure-img
+        = image_tag(@resort.map)
       %p
-        Run Count:
-        = @resort.run_count
-    - unless @resort.lift_count.nil?
+        .like
+          - if current_user.liked? @resort
+            = render :partial => 'unlike'
+          - else
+            = render :partial => 'like'
       %p
-        Lift Count:
-        = @resort.lift_count
-    %p
-      .like
-        - if current_user.liked? @resort
-          = render :partial => 'unlike'
-        - else
-          = render :partial => 'like'
-    %p
-      .total_likes
-        = render :partial => 'total_likes'
+        .total_likes
+          = render :partial => 'total_likes'
+
 
   %section#two.two.reviews
     .comment-show

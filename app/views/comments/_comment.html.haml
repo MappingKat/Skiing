@@ -3,7 +3,6 @@
     .pure-u-1-4
       %a{href: user_profile_path(comment.user)}
         %p
-          @
           = comment.user.name
       %a{href: user_profile_path(comment.user)}
         - if comment.user.profile.profile_picture.icon
@@ -12,7 +11,7 @@
       %p= comment.comment
       - if comment.user != current_user
         - if comment.flagged?
-          %p Flagged!
+          = image_tag('/assets/shovel_2.png')
         -else
-          = link_to 'Flag', inappropriate_resort_comment_path(Resort.find(params[:id]), comment) 
+          = link_to image_tag('/assets/shovel.png'), inappropriate_resort_comment_path(Resort.find(params[:id]), comment) 
       
