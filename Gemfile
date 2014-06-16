@@ -10,6 +10,7 @@ gem 'haml-rails'
 
 # Gems for forum, commenting and voting.
 
+gem 'letsrate', '1.0.8'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable', '~> 3.0.1'
 gem 'make_flaggable', :git => 'git://github.com/ScottyGams/make_flaggable.git'

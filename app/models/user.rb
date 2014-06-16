@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   make_flagger
   acts_as_voter
-
+  letsrate_rater
 
   after_create :create_profile
 

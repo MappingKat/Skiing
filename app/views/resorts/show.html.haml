@@ -12,7 +12,11 @@
       %h1
         = @resort.name
       %p 
+        = @resort_region.region
+      %p 
         = link_to @resort.website, "#{@resort.website}"
+      %p 
+        = rating_for @resort, "resort", :star => 4
       %p
         .total_likes
           = render :partial => 'total_likes'
