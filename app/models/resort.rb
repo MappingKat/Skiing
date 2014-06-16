@@ -1,5 +1,5 @@
 class Resort < ActiveRecord::Base
-  attr_accessible :area, :area_id, :button_max_temp_fahrenheit, :button_min_temp_fahrenheit, :top_max_temp_fahrenheit, :top_min_temp_fahrenheit, :button_max_temp, :button_min_temp, :top_max_temp, :top_min_temp, :chance_of_snow, :total_snow_fall, :avalanche_warning, :country, :daily_pass_adults, :daily_pass_kids, :day_max_temp, :day_min_temp, :day_weather_description, :forecast_date, :image, :lift_status, :map, :name, :night_grooming, :night_max_temp, :night_min_temp, :night_weather_description, :region, :resort_status, :resort_type, :six_days_pass_adults, :six_days_pass_kids, :snow_last_48hours, :surface_conditions, :weather_forecast, :website, :latitude, :longitude, :lift_count, :run_count, :day_zero_day_title, :day_zero_day_text, :day_one_day_title, :day_one_day_text, :day_two_day_title, :day_two_day_text, :day_three_day_title, :day_three_day_text, :day_four_day_title, :day_four_day_text, :day_five_day_title, :day_five_day_text, :day_six_day_title, :day_six_day_text, :day_seven_day_title, :day_seven_day_text, :day_zero_night_title, :day_zero_night_text, :day_one_night_title, :day_one_night_text, :day_two_night_title, :day_two_night_text, :day_three_night_title, :day_three_night_text, :day_four_night_title, :day_four_night_text, :day_five_night_title, :day_five_night_text, :day_six_night_title, :day_six_night_text, :icon_day_zero, :icon_day_one, :icon_day_two, :icon_day_three, :icon_day_four, :icon_day_five, :icon_day_six, :icon_night_zero, :icon_night_one, :icon_night_two, :icon_night_three, :icon_night_four, :icon_night_five, :icon_night_six
+  attr_accessible :area, :area_id, :button_max_temp_fahrenheit, :button_min_temp_fahrenheit, :top_max_temp_fahrenheit, :top_min_temp_fahrenheit, :button_max_temp, :button_min_temp, :top_max_temp, :top_min_temp, :chance_of_snow, :total_snow_fall, :avalanche_warning, :country, :daily_pass_adults, :daily_pass_kids, :day_max_temp, :day_min_temp, :day_weather_description, :forecast_date, :image, :lift_status, :map, :name, :night_grooming, :night_max_temp, :night_min_temp, :night_weather_description, :region, :resort_status, :resort_type, :six_days_pass_adults, :six_days_pass_kids, :snow_last_48hours, :surface_conditions, :weather_forecast, :website, :latitude, :longitude, :lift_count, :run_count, :day_zero_day_title, :day_zero_day_text, :day_one_day_title, :day_one_day_text, :day_two_day_title, :day_two_day_text, :day_three_day_title, :day_three_day_text, :day_four_day_title, :day_four_day_text, :day_five_day_title, :day_five_day_text, :day_six_day_title, :day_six_day_text, :day_seven_day_title, :day_seven_day_text, :day_zero_night_title, :day_zero_night_text, :day_one_night_title, :day_one_night_text, :day_two_night_title, :day_two_night_text, :day_three_night_title, :day_three_night_text, :day_four_night_title, :day_four_night_text, :day_five_night_title, :day_five_night_text, :day_six_night_title, :day_six_night_text, :icon_day_zero, :icon_day_one, :icon_day_two, :icon_day_three, :icon_day_four, :icon_day_five, :icon_day_six, :icon_night_zero, :icon_night_one, :icon_night_two, :icon_night_three, :icon_night_four, :icon_night_five, :icon_night_six, :region_requested
 
   acts_as_votable
   acts_as_commentable
@@ -18,6 +18,20 @@ class Resort < ActiveRecord::Base
         resort
       else 
         resort.search_skiarea
+        resort
+      end
+    else
+      nil
+    end
+  end
+
+  def self.find_or_update_region(id)
+    resort = self.find_by_id(id)
+    if resort 
+      if resort.region_requested
+        resort
+      else 
+        resort.search_region
         resort
       end
     else
@@ -56,6 +70,17 @@ class Resort < ActiveRecord::Base
     self.map = map_response['skiMap']['thumbnail'].last['url']
 
     self.requested = true
+
+    save
+  end
+
+  def search_region
+    url = "http://skimap.org/SkiAreas/view/#{area_id}.json"
+    response = HTTParty.get(url)
+
+    self.region = response["regions"].first["name"]
+
+    self.region_requested = true
 
     save
   end

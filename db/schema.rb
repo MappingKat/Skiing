@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140615125318) do
+ActiveRecord::Schema.define(:version => 20140616103539) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -272,6 +272,7 @@ ActiveRecord::Schema.define(:version => 20140615125318) do
     t.string   "icon_night_four"
     t.string   "icon_night_five"
     t.string   "icon_night_six"
+    t.boolean  "region_requested",           :default => false
   end
 
   create_table "specialities", :force => true do |t|
