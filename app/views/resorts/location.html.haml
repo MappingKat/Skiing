@@ -1,0 +1,7 @@
+#location-overview
+  = javascript_tag do
+    window.resorts = #{raw @resorts.to_json}
+
+  .map-show
+    = render :partial => 'map'
+

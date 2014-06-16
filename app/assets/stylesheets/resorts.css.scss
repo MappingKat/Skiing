@@ -91,10 +91,36 @@ body {
       }
     }
   }
+  #location-overview {
+    #map_canvas {
+      border: solid #FF00DE 3px;
+      display: inline-block;
+      width: 100%;
+      height: 500px;
+      float: left;
+      margin-right: 5px;
+    }
+  }
   #resort_index {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    ul {
+      list-style-type: none;
+      li {
+        margin-bottom: 5%;
+        img {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+        }
+        h2 {
+          a {
+            color: #FF00DE;
+          }
+        }
+      }
+    }  
   }
 
   .resort_show {

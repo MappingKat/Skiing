@@ -1,17 +1,12 @@
-#resort_index
-  .pure-g
-    .pure-u-1-2
-      = javascript_tag do
-        window.resorts = #{raw @all_resorts.to_json}
+#resort_index     
+  %ul 
+    - @resorts.each do |resort|
+      %li 
+        = image_tag(resort.map) if resort.map
+        %h2
+          = link_to resort.name, resort_path(resort)
+        %h3
+          = resort.region
 
-      .map-show
-        = render :partial => 'map'
-
-    .pure-u-1-2
-      %ul 
-        - @resorts.each do |resort|
-          %li 
-            = link_to resort.name, resort_path(resort)
-            = resort.get_likes.size
-        
-        = paginate @resorts
+    
+    = paginate @resorts

@@ -27,8 +27,7 @@
           = @resort.lift_count
       .pure-img
         = render :partial => 'map'
-        = image_tag(@resort.map)
-
+        = image_tag(@resort.map) if @resort.map
 
   %section#two.two.reviews
     .comment-show

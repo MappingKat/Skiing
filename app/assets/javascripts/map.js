@@ -43,7 +43,7 @@ function initialise() {
     for (var i in resorts) {
       var p = resorts[i];
 
-      var content = p.name
+      var content = '<a href="/resorts/' + p.id + '">' +p.name + '</a>';
 
       var position = new google.maps.LatLng(p.latitude, p.longitude);
       // bounds.extend(position);
