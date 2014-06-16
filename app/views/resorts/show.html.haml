@@ -17,9 +17,6 @@
         = link_to @resort.website, "#{@resort.website}"
       %p 
         = rating_for @resort, "resort", :star => 4
-      %p
-        .total_likes
-          = render :partial => 'total_likes'
       - unless @resort.run_count.nil?
         %p
           Run Count:
@@ -28,18 +25,9 @@
         %p
           Lift Count:
           = @resort.lift_count
-
       .pure-img
+        = render :partial => 'map'
         = image_tag(@resort.map)
-      %p
-        .like
-          - if current_user.liked? @resort
-            = render :partial => 'unlike'
-          - else
-            = render :partial => 'like'
-      %p
-        .total_likes
-          = render :partial => 'total_likes'
 
 
   %section#two.two.reviews
@@ -49,6 +37,17 @@
   %section#three.three.weather  
     .weather-show
       = render :partial => 'weather'
+
+
+
+= javascript_tag do
+  window.resorts = #{raw @resort.nearbys(50).to_json}
+  window.resort = #{raw @resort.to_json} 
+
+
+
+
+
 
     
 

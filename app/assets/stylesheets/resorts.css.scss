@@ -92,7 +92,7 @@ body {
     }
   }
   #resort_index {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -136,6 +136,34 @@ body {
         margin-right: auto;
         h1 {
           color: #555;
+        }
+        .star {
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+          img {
+            width: 35%;
+          }
+        }
+        p {
+          color: #555;
+          font-size: 28px;
+        }
+        .pure-img {
+          margin-bottom: 40%;
+          #map_canvas {
+            border: solid #FF00DE 3px;
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            float: left;
+            margin-right: 5px;
+          }
+          img {
+            width: 550px;
+            float: right;
+            border: solid #FF00DE 3px;
+          }
         }
         a {
           color: #555;
@@ -459,11 +487,3 @@ body {
 
 
 
-#map_canvas {
-  display: inline-block;
-  width: 500px;
-  height: 500px;
-  background-image: url('assets/ajax-loader.gif');
-  float: left;
-  margin-right: 5px;
-}

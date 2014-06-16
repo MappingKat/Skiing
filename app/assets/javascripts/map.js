@@ -1,7 +1,17 @@
-function initialise() {
-var coords = new google.maps.LatLng(51, 0);
+var SkiApp = SkiApp || {};
 
-  function locateMe(callback) { 
+function initialise() {
+  if (window.resort) {
+    var coords = new google.maps.LatLng(resort.latitude, resort.longitude);
+    var zoom = 8;
+    renderMap();
+  } else {
+    var coords = new google.maps.LatLng(51, 0);
+    var zoom = 5;
+    locateMe(renderMap);
+  };
+   
+  function locateMe(callback, coords) { 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {
         var latitude = position.coords.latitude;
@@ -17,7 +27,7 @@ var coords = new google.maps.LatLng(51, 0);
   function renderMap() {
     var mapOptions = {
       center: coords,
-      zoom: 5,
+      zoom: zoom,
       mapTypeId: 'terrain',
       streetViewControl: false,
       mapTypeControl: false
@@ -26,7 +36,7 @@ var coords = new google.maps.LatLng(51, 0);
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     var infowindow = new google.maps.InfoWindow();
     // var bounds = new google.maps.LatLngBounds();
-    var image = '/assets/marker.png';
+    var image = '/assets/pin_2.png';
 
     // map.fitBounds(bounds);
 
@@ -55,7 +65,7 @@ var coords = new google.maps.LatLng(51, 0);
     }
   }
   
-  locateMe(renderMap);
+  
 
 };
 

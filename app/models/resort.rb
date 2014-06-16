@@ -11,6 +11,7 @@ class Resort < ActiveRecord::Base
   validates :area_id, uniqueness: true
   validates :name, uniqueness: true
 
+  geocoded_by :area
 
   def self.find_or_update(id)
     resort = self.find_by_id(id)
