@@ -17,6 +17,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    params[:profile][:resort_ids] = params[:profile][:resort_ids].split(",")
     @user = User.find(params[:user_id])
     @profile = @user.profile
 

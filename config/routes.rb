@@ -17,6 +17,7 @@ SkiApp::Application.routes.draw do
 
   get '/resort/:id/like', to: "resorts#like", as: :resort_like
   get '/resort/:id/unlike', to: "resorts#unlike", as: :resort_unlike
+  get '/resorts/search_resorts', to: "resorts#search_resorts", as: :search_resorts
 
   resources :resorts do
     get 'page/:page', action: :index, on: :collection

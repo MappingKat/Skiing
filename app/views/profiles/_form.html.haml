@@ -28,11 +28,8 @@
             = speciality.name
 
         %div.set_profile_form_fields
-          = f.label :resorts, "What are your favorite resorts?" 
-          = hidden_field_tag "profile[resort_ids][]"
-          - for resort in Resort.all
-            = check_box_tag "profile[resort_ids][]", resort.id, @profile.resorts.include?(resort)
-            = resort.name
+          = f.label :resort_ids, "Add your favorite resorts?" 
+          = f.text_field :resort_ids, "data-pre" => @profile.resorts.map(&:attributes).to_json
 
         %div.set_profile_submit_button
           = f.submit "SAVE", :id => 'input_button_set_profile', :class => 'pure-input-rounded'

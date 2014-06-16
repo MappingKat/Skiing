@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= jquery.scrollTo-1.4.3.1-min
+//= jquery.tokeninput
 //= waypoints.min
 //= require map
+//= require profile_show
+//= require resort_show
 //= require_tree .

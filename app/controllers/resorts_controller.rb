@@ -32,5 +32,13 @@ class ResortsController < ApplicationController
     redirect_to @resort, notice: "Unliked!"
   end
 
+  def search_resorts
+    @resorts = Resort.where("name ilike ?", "%#{params[:q]}%")
+
+    respond_to do |format|
+      format.json { render :json => @resorts.map(&:attributes) }
+    end
+  end
+
 
 end

@@ -12,7 +12,7 @@ class Resort < ActiveRecord::Base
 
 
   def self.find_or_update(id)
-    resort = self.find_by_id(id) 
+    resort = self.find_by_id(id)
     if resort 
       if resort.requested
         resort
