@@ -16,7 +16,7 @@ $(function() {
       $(this).attr("href"),
       {
         duration: 2000,
-        offset: { 'left':0, 'top':500 }
+        offset: { 'left':0, 'top':0 }
       }
     );
   });
@@ -27,7 +27,6 @@ $(function() {
     $nav_links.removeClass('active');
   };
 
-  // sky section
   $section_one.waypoint({
     handler: function(direction){
       if (direction == "down") {
@@ -35,7 +34,6 @@ $(function() {
         $nav_one.addClass('active')
       }
     },
-    // offset: -50
   });
 
   $section_one.waypoint({
