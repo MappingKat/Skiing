@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_filter :authenticate_user!
   load_and_authorize_resource
   # urgent TODO: set up permissions so people can't edit others' profiles
   

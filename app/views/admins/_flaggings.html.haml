@@ -1,0 +1,22 @@
+%h1 
+  flagged
+  %span.magenta> items.
+
+%table
+  %tr
+    %th Type
+    %th Flagged Comment Resort
+    %th Flagger
+    %th Moderation
+  - @flagged_comments.each do |flag|
+    - flagged_comment = Comment.find(flag.flaggable_id)
+    - flagged_by = User.find(flag.flagger_id)
+    %tr
+      %td
+        = flag.flag.upcase
+      %td
+        = link_to flagged_comment.resort.name, resort_path(flagged_comment.resort)
+      %td
+        = link_to flagged_by.name, user_profile_path(flagged_by)
+      %td
+        = link_to('Delete Comment', [flagged_comment.resort, flagged_comment], :method => :delete, :confirm => 'Are you sure?')

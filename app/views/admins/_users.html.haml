@@ -1,0 +1,16 @@
+%h1 
+  all
+  %span.magenta> users.
+
+%table
+  %tr
+    %th Name
+    %th E-Mail
+    %th Reviews
+    %th Moderation
+  - @users.each do |user|
+    %tr
+      %td= link_to user.name, user_profile_path(user)
+      %td= user.email
+      %td= user.comments.count
+      %td= button_to "Delete User", user, method: :delete, data: { confirm: "Are you sure?" }, method: :delete

@@ -1,7 +1,5 @@
 SkiApp::Application.routes.draw do
 
-  match '/rate' => 'rater#create', :as => 'rate'
-
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -13,10 +11,13 @@ SkiApp::Application.routes.draw do
 
   devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
 
+  resources :admins, only: [:index], as: 'admins'
+
   resources :home, only: [:index], as: '/' do
     get 'page/:page', action: :index, on: :collection
   end
 
+  match '/rate' => 'rater#create', :as => 'rate'
   get '/resorts/location', to: "resorts#location", as: :resort_location
   get '/resort/:id/like', to: "resorts#like", as: :resort_like
   get '/resort/:id/unlike', to: "resorts#unlike", as: :resort_unlike

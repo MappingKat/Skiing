@@ -3,7 +3,7 @@ var SkiApp = SkiApp || {};
 function initialise() {
   if (window.resort) {
     var coords = new google.maps.LatLng(resort.latitude, resort.longitude);
-    var zoom = 8;
+    var zoom = 9;
     renderMap();
   } else {
     var coords = new google.maps.LatLng(51, 0);
