@@ -1,8 +1,9 @@
-- if current_user.role == "admin"
-  = render 'users'
+#admin_panel
+  - if current_user.role == "admin"
+    = render 'users'
 
-  = render 'flaggings'
+    = render 'flaggings'
 
-- else
-  .notice
-    %p Sorry, you are not authorised to view the Admin Panel!
+  - else
+    .notice
+      %p Sorry, you are not authorised to view the Admin Panel!

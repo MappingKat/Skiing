@@ -5,11 +5,9 @@
 body {
   text-align: center;
   span.magenta {
-        color: #FF00DE;
+    color: #FF00DE;
   }
 }
-
-
 
 .menu {
   padding-left: 2%;
@@ -62,6 +60,31 @@ body {
 
 
 .main_section {
+  #admin_panel {
+    table {
+      margin-bottom: 5%;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #eee;
+      tr {
+        th {
+          padding: 2%;
+        }
+        td{
+          padding: 1%;
+          border-bottom: solid #fff 1px;
+          a {
+            text-decoration: none;
+            color: #555;
+          }
+          a:hover {
+            color: #FF00DE;
+          }
+        } 
+      }
+    }
+  }
   .set_profile {
     width: 40%;
     margin-left: auto;
