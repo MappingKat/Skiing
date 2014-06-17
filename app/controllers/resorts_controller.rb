@@ -38,10 +38,10 @@ class ResortsController < ApplicationController
   end
 
   def search_resorts
-    @resorts = Resort.where("name ilike ?", "%#{params[:q]}%").select([:name, :id])
+    @resorts = Resort.where("name ilike ?", "%#{params[:q]}%").select([:name, :id, :region])
 
     respond_to do |format|
-      format.json { render :json => @resorts.map{|r| { name: r.name, id: r.id } } }
+      format.json { render :json => @resorts.map{|r| { name: r.name, id: r.id, region: r.region } } }
     end
   end
 

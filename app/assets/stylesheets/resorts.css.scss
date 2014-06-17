@@ -7,6 +7,20 @@ body {
   span.magenta {
     color: #FF00DE;
   }
+
+  span.ui-helper-hidden-accessible {
+    color: #FF00DE;
+  }
+
+  ul.ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content.ui-corner-all {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 20%;
+    li {
+      color: #FF00DE;
+      padding: 1%;
+    }
+  }
 }
 
 .notice {
@@ -14,6 +28,69 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
+
+#sign-up {
+    padding-top: 5%;
+    padding-bottom: 20%;
+    background-image: url('/assets/signup2.jpg');
+    background-size: cover;
+    .pure-form {
+      input {
+        font-size: 22px;
+        padding: 0.25%;
+        margin: 0.75%;
+      }
+      #input_button_sign_up {
+        color: #FF00DE;
+        font-weight: bold;
+        font-size: 22px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+      }
+      .social_sign_ins { 
+        margin-top: 2%; 
+      }
+    }
+  }
+  #sign-in {
+    padding-top: 5%;
+    padding-bottom: 20%;
+    background-image: url('/assets/signin.jpg');
+    background-size: cover;
+    .pure-form {
+      input {
+        font-size: 22px;
+        padding: 0.25%;
+        margin: 0.75%;
+      }
+      label {
+        color: #000;
+        font-weight: bold;
+      }
+      a {
+        font-weight: bold;
+        color: #000;
+        font-size: 18px;
+      }
+      a:hover {
+        color: #FF00DE;
+      }
+      .social_sign_ins { 
+        margin-top: 2%; 
+      }
+      #input_button_sign_in {
+        color: #FF00DE;
+        font-weight: bold;
+        font-size: 22px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+      }
+    }
+  }
 
 .menu {
   padding-left: 4%;
@@ -104,47 +181,9 @@ body {
     }
   }
 
-  .set_profile {
-    h1 {
-      a {
-        margin-left: 2%;
-        vertical-align: middle;
-      }
-    }
-    background-color: #eee;
-    padding: 5%;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-    .pure-form.pure-form-stacked.pure-form-aligned {
-      .set_profile_form {
-        text-align: left;
-        .set_profile_submit_button {
-          text-align: center;
-          margin-top: 4%;
-          #input_button_set_profile {
-            color: #fff;
-            font-size: 16px;
-            padding-left: 4.5%;
-            padding-right: 4.5%;
-            padding-top: 0.75%;
-            padding-bottom: 0.75%;
-          }
-        }
-        .set_profile_form_fields {
-          margin-top: 2%;
-          margin-button: 2%;
-          label {
-            font-weight: bold;
-          }
-        }
-      }
-    }
-  }
   #location-overview {
     #map_canvas {
-      border: solid #FF00DE 3px;
+      border-top: solid #FF00DE 3px;
       display: inline-block;
       width: 100%;
       height: 600px;
@@ -155,6 +194,41 @@ body {
       }
     }
   }
+
+  #search {
+    background-image: url('/assets/skiers.jpg');
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 25%;
+    h1 {
+      font-size: 72px;
+    }
+    .pure-form.pure-form-stacked {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      input {
+        font-size: 26px;
+        padding: 0.5%;
+        margin: 1%;
+        text-align: left;
+      }
+      #resort_name {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #input_button {
+        color: #fff;
+        font-size: 22px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        }
+      }
+    }
+
   #resort_index {
     width: 100%;
     margin-left: auto;
@@ -167,7 +241,8 @@ body {
           width: 250px;
           height: 250px;
           border-radius: 50%;
-        }
+          border: solid #FF00DE 2px;
+      }
         h2 {
           a {
             color: #FF00DE;
@@ -215,7 +290,7 @@ body {
         margin-left: auto;
         margin-right: auto;
         h1 {
-          color: #555;
+          color: #000;
         }
         .star {
           width: 80%;
@@ -226,7 +301,7 @@ body {
           }
         }
         p {
-          color: #555;
+          color: #000;
           font-size: 28px;
         }
         .pure-img {
@@ -249,7 +324,7 @@ body {
           }
         }
         a {
-          color: #555;
+          color: #000;
           font-size: 22px;
           text-decoration: none;
         }
@@ -273,7 +348,6 @@ body {
           font-size: 36px;
           display: block;
           a {
-            text-decoration: none;
             color: #000;
           }
           a:hover {
@@ -291,6 +365,7 @@ body {
             padding-top: 1%;
             padding-bottom: 1%;
           }
+            
         }
         #comment_display {
           margin-top: 5%;
@@ -317,6 +392,13 @@ body {
                 p {
                   line-height: 1.5;           
                 }
+                a {
+                  float: right;
+                  color: #555;
+                }
+                a:hover {
+                  color: #FF00DE;
+                }
                 img {
                   width: 3%;
                   float: right;
@@ -327,7 +409,7 @@ body {
         }
       }
     }
-
+  
     .weather {
       background: #fff;
       .weather-show {
@@ -365,123 +447,7 @@ body {
       }
     }
   }
- 
-  .comment-show {
-    #write_review {
-      .comment_display {
-        margin-top: 5%;
-        background-color: #eee;
-        #single_comment_display {
-          border: solid #fff 1px;
-          padding: 2%;
-          text-align: left;
-          .pure-g {
-            .pure-u-1-4 {
-              a {
-                img {
-                  border-radius: 50%;
-                }
-              }
-            }
-            .pure-u-3-4 {
-              p {
-                line-height: 1.5;
-              }
-            }
-          }
-        }
-      }  
-    }
-  }
-  #homepage {
-    background-image: url('/assets/skiers.jpg');
-    background-size: cover;
-    padding-top: 10%;
-    padding-bottom: 25%;
-    h1 {
-      font-size: 72px;
-    }
-    #search {
-      .pure-form {
-        input {
-          font-size: 26px;
-          padding: 0.5%;
-          margin: 1.5%;
-          text-align: left;
-        }
-        #input_button {
-          color: #fff;
-          font-size: 22px;
-          padding-left: 3%;
-          padding-right: 3%;
-          padding-top: 0.5%;
-          padding-bottom: 0.5%;
-        }
-      }
-    }
-  }
-  #sign-up {
-    padding-top: 5%;
-    padding-bottom: 20%;
-    background-image: url('/assets/signup2.jpg');
-    background-size: cover;
-    .pure-form {
-      input {
-        font-size: 22px;
-        padding: 0.25%;
-        margin: 0.75%;
-      }
-      #input_button_sign_up {
-        color: #FF00DE;
-        font-weight: bold;
-        font-size: 22px;
-        padding-left: 3%;
-        padding-right: 3%;
-        padding-top: 0.5%;
-        padding-bottom: 0.5%;
-      }
-      .social_sign_ins { 
-        margin-top: 2%; 
-      }
-    }
-  }
-  #sign-in {
-    padding-top: 5%;
-    padding-bottom: 20%;
-    background-image: url('/assets/signin.jpg');
-    background-size: cover;
-    .pure-form {
-      input {
-        font-size: 22px;
-        padding: 0.25%;
-        margin: 0.75%;
-      }
-      label {
-        color: #000;
-        font-weight: bold;
-      }
-      a {
-        font-weight: bold;
-        color: #000;
-        font-size: 18px;
-      }
-      a:hover {
-        color: #FF00DE;
-      }
-      .social_sign_ins { 
-        margin-top: 2%; 
-      }
-      #input_button_sign_in {
-        color: #FF00DE;
-        font-weight: bold;
-        font-size: 22px;
-        padding-left: 3%;
-        padding-right: 3%;
-        padding-top: 0.5%;
-        padding-bottom: 0.5%;
-      }
-    }
-  }
+
   #profile_show {
     background-image: url('/assets/skiers.jpg');
     background-size: cover;
@@ -527,6 +493,45 @@ body {
             }
           }
         }
+    }
+  }
+  
+  .set_profile {
+    h1 {
+      a {
+        margin-left: 2%;
+        vertical-align: middle;
+      }
+    }
+    background-color: #eee;
+    padding: 5%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    .pure-form.pure-form-stacked.pure-form-aligned {
+      .set_profile_form {
+        text-align: left;
+        .set_profile_submit_button {
+          text-align: center;
+          margin-top: 4%;
+          #input_button_set_profile {
+            color: #fff;
+            font-size: 16px;
+            padding-left: 4.5%;
+            padding-right: 4.5%;
+            padding-top: 0.75%;
+            padding-bottom: 0.75%;
+          }
+        }
+        .set_profile_form_fields {
+          margin-top: 2%;
+          margin-button: 2%;
+          label {
+            font-weight: bold;
+          }
+        }
+      }
     }
   }
 }

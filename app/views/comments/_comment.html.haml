@@ -15,5 +15,5 @@
         -else
           = link_to image_tag('/assets/shovel.png'), inappropriate_resort_comment_path(Resort.find(params[:id]), comment)
       - else
-        = link_to('Delete Comment', [comment.resort, comment], :method => :delete, :confirm => 'Are you sure?')
+        = link_to('Delete', [comment.resort, comment], :method => :delete, :confirm => 'Are you sure?')
     

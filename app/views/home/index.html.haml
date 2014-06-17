@@ -1,12 +1,13 @@
-#homepage  
+#search
+
   %h1
     %span.black find
     %span.magenta> resort.
-  #search
-    = search_form_for @q do |f|
-      %p
-        .pure-form
-          - f.label :name_cont
-          = f.text_field :name_cont, placeholder: "Resort or Area", id: "resort_name"
-          = f.submit 'SEARCH', :id => 'input_button', :class => 'pure-input-rounded'
+
+  = search_form_for @q do |f|
+    %p
+      .pure-form.pure-form-stacked
+        - f.label :name_cont
+        = f.text_field :name_cont, placeholder: "Resort or Area", id: "resort_name"
+        = f.submit 'SEARCH', :id => 'input_button', :class => 'pure-input-rounded'
 

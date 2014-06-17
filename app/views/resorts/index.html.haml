@@ -5,8 +5,6 @@
         = image_tag(resort.map) if resort.map
         %h2
           = link_to resort.name, resort_path(resort)
-        %h3
-          = resort.region
 
     
     = paginate @resorts
