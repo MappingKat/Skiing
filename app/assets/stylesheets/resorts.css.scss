@@ -9,23 +9,30 @@ body {
   }
 }
 
-.menu {
-  padding-left: 2%;
-  padding-right: 2%;
-  #logo {
-    #sign_out {
-      float: left;
-    }
-    p {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      img {
-        width: 20%;
-      }
-    } 
-  }
+.notice {
+  color: #FF00DE;
+  font-weight: bold;
+  font-size: 18px;
+}
 
+.menu {
+  padding-left: 4%;
+  padding-right: 4%;
+  p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+    width: 20%;
+  }
+  .social_sign_ins {
+    margin-top: 5%;
+  }
+  
+  #sign_out { 
+      float: left; 
+    } 
+  } 
 
   #profile_pic_layout {
     img, label { 
@@ -39,6 +46,17 @@ body {
     }
     img {
       margin-top: 2.5%;
+    }
+  }
+  #logo_signed_in {
+    #sign_out {
+      float: left;
+    }
+  }
+  #logo_signed_out {
+    float: right;
+    img {
+      max-width: 60%;
     }
   }
   ul {
@@ -85,10 +103,20 @@ body {
       }
     }
   }
+
   .set_profile {
+    h1 {
+      a {
+        margin-left: 2%;
+        vertical-align: middle;
+      }
+    }
+    background-color: #eee;
+    padding: 5%;
     width: 40%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5%;
     .pure-form.pure-form-stacked.pure-form-aligned {
       .set_profile_form {
         text-align: left;
@@ -393,6 +421,10 @@ body {
     }
   }
   #sign-up {
+    padding-top: 5%;
+    padding-bottom: 20%;
+    background-image: url('/assets/signup2.jpg');
+    background-size: cover;
     .pure-form {
       input {
         font-size: 22px;
@@ -400,29 +432,53 @@ body {
         margin: 0.75%;
       }
       #input_button_sign_up {
-        color: #fff;
-        font-size: 16px;
-        padding-left: 1.5%;
-        padding-right: 1.5%;
-        padding-top: 0.25%;
-        padding-bottom: 0.25%;
+        color: #FF00DE;
+        font-weight: bold;
+        font-size: 22px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+      }
+      .social_sign_ins { 
+        margin-top: 2%; 
       }
     }
   }
   #sign-in {
+    padding-top: 5%;
+    padding-bottom: 20%;
+    background-image: url('/assets/signin.jpg');
+    background-size: cover;
     .pure-form {
       input {
         font-size: 22px;
         padding: 0.25%;
         margin: 0.75%;
       }
+      label {
+        color: #000;
+        font-weight: bold;
+      }
+      a {
+        font-weight: bold;
+        color: #000;
+        font-size: 18px;
+      }
+      a:hover {
+        color: #FF00DE;
+      }
+      .social_sign_ins { 
+        margin-top: 2%; 
+      }
       #input_button_sign_in {
-        color: #fff;
-        font-size: 16px;
-        padding-left: 1.5%;
-        padding-right: 1.5%;
-        padding-top: 0.25%;
-        padding-bottom: 0.25%;
+        color: #FF00DE;
+        font-weight: bold;
+        font-size: 22px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
       }
     }
   }
@@ -435,6 +491,9 @@ body {
       color: #FF00DE;
       margin-bottom: 3%;
       font-size: 42px;
+      a {
+        vertical-align: middle;
+      }
     }
     .profile_show_links {
       float: right;

@@ -7,6 +7,7 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 gem 'haml-rails'
+gem 'jquery-ui-rails'
 
 # Gems for forum, commenting and voting.
 

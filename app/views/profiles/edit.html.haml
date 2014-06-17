@@ -1,9 +1,10 @@
-.set_profile
-  %h1
-    set 
-    %span.magenta> profile.
-    = link_to image_tag('/assets/edit.png'), edit_user_registration_path(@user)
+.edit_profile 
+  .set_profile
+    %h1
+      set 
+      %span.magenta> profile.
+      = link_to image_tag('/assets/edit.png'), edit_user_registration_path(@user), title: 'Edit Settings', rel: 'data-tooltip'
 
-  = render 'form'
+    = render 'form'
 
 

@@ -20,10 +20,9 @@
               %label
                 hi,
 
-        #logo
-          
+        #logo_signed_in
           #sign_out
-            = link_to image_tag('/assets/sign-out.png'), destroy_user_session_path, method: :delete
+            = link_to image_tag('/assets/sign-out.png'), destroy_user_session_path, method: :delete, title: 'Sign Out', rel: 'data-tooltip'     
           %p
             = image_tag("/assets/logo.png")
             
@@ -39,6 +38,8 @@
               %li= link_to('admin panel', '/admins')
               
       - else
+        #logo_signed_out
+          = image_tag("/assets/logo.png")
         %ul
           %li
             = link_to "sign in", new_user_session_path
@@ -48,6 +49,9 @@
             = link_to 'search', "/"
           %li
             = link_to('resorts', resort_location_path)
+        
+
+
     
     .main_section 
       .login_alerts

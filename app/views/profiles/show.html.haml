@@ -4,7 +4,7 @@
       = @user.name.upcase
     - elsif @user.email
       = @user.email
-    = link_to image_tag('/assets/edit.png'), edit_user_profile_path(@user)
+    = link_to image_tag('/assets/edit.png'), edit_user_profile_path(@user), title: 'Set Profile', rel: 'data-tooltip'     
 
   .pure-g.profile_show
     .pure-u-1-3

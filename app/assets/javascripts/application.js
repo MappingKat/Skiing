@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= jquery.scrollTo-1.4.3.1-min
 //= jquery.tokeninput
 //= waypoints.min

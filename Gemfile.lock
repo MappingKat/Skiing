@@ -325,6 +325,7 @@ DEPENDENCIES
   haml-rails
   httparty
   jquery-rails
+  jquery-ui-rails
   json
   kaminari
   letsrate (= 1.0.8)
