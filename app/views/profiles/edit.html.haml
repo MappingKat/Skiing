@@ -1,3 +1,9 @@
-= render 'form'
+.set_profile
+  %h1
+    set 
+    %span.magenta> profile.
+    = link_to image_tag('/assets/edit.png'), edit_user_registration_path(@user)
 
-= link_to('edit settings', edit_user_registration_path)
+  = render 'form'
+
+

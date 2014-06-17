@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_filter :authenticate_user!
   before_filter :load_resort
 
@@ -29,10 +30,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = @resort.comments.find(params[:id])
     @comment.destroy
-    redirect_to(:back)
+    redirect_to(@resort)
   end
-
 
 end

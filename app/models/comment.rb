@@ -12,4 +12,8 @@ class Comment < ActiveRecord::Base
   make_flaggable :inappropriate
 
   belongs_to :user
+
+  def resort
+    commentable
+  end
 end

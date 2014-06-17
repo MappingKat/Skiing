@@ -1,37 +1,34 @@
-.set_profile
-  %h1 Set Profile
+%div.pure-form.pure-form-stacked.pure-form-aligned
+  = form_for @profile, url: user_profile_path(@user) do |f|
+    .set_profile_form
+      %div.set_profile_form_fields
+        = f.label :profile_picture, "Upload Profile Pic"  
+        = f.file_field :profile_picture
 
-  %div.pure-form.pure-form-stacked.pure-form-aligned
-    = form_for @profile, url: user_profile_path(@user) do |f|
-      .set_profile_form
-        %div.set_profile_form_fields
-          = f.label :profile_picture, "Upload Profile Pic"  
-          = f.file_field :profile_picture
+      %div.set_profile_form_fields
+        = f.label :prefered, "Skier or Boarder?"   
+        = f.select(:prefered, options_for_select(['Ski', 'Snowboard', 'Ski and Snowboard']))
 
-        %div.set_profile_form_fields
-          = f.label :prefered, "Skier or Boarder?"   
-          = f.select(:prefered, options_for_select(['Ski', 'Snowboard', 'Ski and Snowboard']))
+      %div.set_profile_form_fields
+        = f.label :level, "What's your current level?"      
+        = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Expert']))
 
-        %div.set_profile_form_fields
-          = f.label :level, "What's your current level?"      
-          = f.select(:level, options_for_select(['Beginner', 'Intermediate', 'Advanced', 'Expert']))
+      %div.set_profile_form_fields
+        = f.label :profile_picture, "Powder Biography"
+        = f.text_area :bio, :size => "50x10", placeholder: "Enter a short description about you and your powder skills"        
 
-        %div.set_profile_form_fields
-          = f.label :profile_picture, "Powder Biography"
-          = f.text_area :bio, :size => "50x10", placeholder: "Enter a short description about you and your powder skills"        
+      %div.set_profile_form_fields
+        = f.label :specialities, "Do you have any preferences or specialities?" 
+        = hidden_field_tag "profile[speciality_ids][]"
+        - for speciality in Speciality.all
+          = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
+          = speciality.name
 
-        %div.set_profile_form_fields
-          = f.label :specialities, "Do you have any preferences or specialities?" 
-          = hidden_field_tag "profile[speciality_ids][]"
-          - for speciality in Speciality.all
-            = check_box_tag "profile[speciality_ids][]", speciality.id, @profile.specialities.include?(speciality)
-            = speciality.name
+      %div.set_profile_form_fields
+        = f.label :resort_ids, "Add your favorite resorts?" 
+        = f.text_field :resort_ids, "data-pre" => @profile.resorts.map(&:attributes).to_json
 
-        %div.set_profile_form_fields
-          = f.label :resort_ids, "Add your favorite resorts?" 
-          = f.text_field :resort_ids, "data-pre" => @profile.resorts.map(&:attributes).to_json
-
-        %div.set_profile_submit_button
-          = f.submit "SAVE", :id => 'input_button_set_profile', :class => 'pure-input-rounded'
+      %div.set_profile_submit_button
+        = f.submit "SAVE", :id => 'input_button_set_profile', :class => 'pure-input-rounded'
     
 

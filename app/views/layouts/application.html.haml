@@ -41,7 +41,11 @@
           %li
             = link_to "sign in", new_user_session_path
           %li
-            = link_to "register", new_user_registration_path 
+            = link_to "register", new_user_registration_path
+          %li
+            = link_to 'search', "/"
+          %li
+            = link_to('resorts', resort_location_path)
     
     .main_section 
       .login_alerts

@@ -1,14 +1,23 @@
 %h2 
   resort
   %span.magenta> review.
-#write_review
-  .pure-form.pure-form-stacked.pure-form-aligned
-    = form_for([@resort, @comment]) do |f|
-      = f.text_area :comment, :size => "50x10", placeholder: "Add a Review..."
-      = f.hidden_field :user_id, value: current_user.id
-      = f.hidden_field :commentable_type, value: "Resort"
-      %br
-      = f.submit 'ADD REVIEW', :id => 'input_button_review', :class => 'pure-input-rounded'
+- if current_user
+  #write_review
+    .pure-form.pure-form-stacked.pure-form-aligned
+      = form_for([@resort, @comment]) do |f|
+        = f.text_area :comment, :size => "50x10", placeholder: "Add a Review..."
+        = f.hidden_field :user_id, value: current_user.id
+        = f.hidden_field :commentable_type, value: "Resort"
+        %br
+        = f.submit 'ADD REVIEW', :id => 'input_button_review', :class => 'pure-input-rounded'
+- else
+  %h2 
+    Join us to review
+    %span.magenta
+      = @resort.name
+    !
+  %h1
+    = link_to "register", new_user_registration_path
   
 #comment_display
   - if @resort.comments.any?
