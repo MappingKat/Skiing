@@ -16,13 +16,13 @@
           - if current_user.profile.profile_picture
             %img{src: current_user.profile.profile_picture.icon}
             %br
-            %p
-              %label
-                hi,
+            %br
+            %label
+              hi,
 
         #logo_signed_in
           #sign_out
-            = link_to image_tag('/assets/sign-out.png'), destroy_user_session_path, method: :delete, title: 'Sign Out', rel: 'data-tooltip'     
+            = link_to image_tag('/assets/sign-out.png'), destroy_user_session_path, method: :delete, title: 'Sign Out', rel: 'data-tooltip'   
           %p
             = image_tag("/assets/logo.png")
             
@@ -61,3 +61,23 @@
       = yield
 
       = yield :map_javascript
+
+    %footer
+      %h2
+        CONNECT WITH US
+
+      .connect
+        = link_to image_tag("/assets/twitter_2.png"), "https://twitter.com/share"
+        = mail_to("paul_varga@me.com", image_tag("/assets/mail.png"))
+
+      .privacy
+        = render :partial => '/home/privacy'
+
+      .rights
+        © 2014 Paul Varga - All Rights Reserved
+
+
+
+
+
+

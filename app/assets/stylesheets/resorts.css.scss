@@ -23,6 +23,30 @@ body {
   }
 }
 
+
+footer {
+  background: #555;
+  border-top: solid #FF00DE 3px;
+  color: #FFF;
+  h2 {
+    padding-top: 2%;
+  }
+  img {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .privacy {
+    margin-top: 2%;
+  }
+  .rights {
+    margin-top: 2%;
+    font-size: 12px;
+    padding-bottom: 3%;
+  }
+
+}
+
+
 .notice {
   color: #FF00DE;
   font-weight: bold;
@@ -248,6 +272,15 @@ body {
             color: #FF00DE;
           }
         }
+      }
+    }
+    .pagination {
+      a {
+        color: #555;
+        font-size: 18px;
+      }
+      a:hover {
+        color: #FF00DE;
       }
     }  
   }
@@ -614,6 +647,4 @@ body {
     }
   }
 }
-
-
 
