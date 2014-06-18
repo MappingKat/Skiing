@@ -19,4 +19,7 @@
 //= require map
 //= require profile_show
 //= require resort_show
+//= require jquery.raty
+//= require letsrate
+
 //= require_tree .
