@@ -8,7 +8,6 @@ gem 'rails', '3.2.18'
 gem 'pg'
 gem 'haml-rails'
 gem 'jquery-ui-rails'
-gem "fog", "~> 1.3.1"
 
 # Gems for forum, commenting and voting.
 
