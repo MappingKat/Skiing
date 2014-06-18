@@ -6,13 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Seeddata for specialities
-
-['Off-Piste', 'Ski-Touring', 'Downhill', 'Slalom', 'Cross-Country'].each do |speciality|
+# Seed-Data for specialities
+['Alpine', 'Back-Country', 'Cross-Country', 'Downhill', 'Freestyle', 'Nordic', 'Telemark' ].each do |speciality|
   Speciality.create!( name: speciality )
 end 
 
-# Seeddata for resort setup - TODO: define rake task
+# Seed-Data for resort setup - TODO: define rake task
 url = 'http://skimap.org/SkiAreas/index.xml'
 response = HTTParty.get(url)
 ski_areas = response['skiAreas'] rescue nil
