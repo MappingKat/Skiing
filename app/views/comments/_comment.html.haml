@@ -11,9 +11,9 @@
       %p= comment.comment
       - if comment.user != current_user
         - if comment.flagged?
-          = image_tag('/assets/shovel_2.png')
+          = image_tag(asset_path('shovel_2.png'))
         -else
-          = link_to image_tag('/assets/shovel.png'), inappropriate_resort_comment_path(Resort.find(params[:id]), comment)
+          = link_to image_tag(asset_path('shovel.png')), inappropriate_resort_comment_path(Resort.find(params[:id]), comment)
       - else
         = link_to('Delete', [comment.resort, comment], :method => :delete, :confirm => 'Are you sure?')
     
