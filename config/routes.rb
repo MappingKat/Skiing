@@ -17,7 +17,7 @@ SkiApp::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
 
-  match '/rate' => 'rater#create', :as => 'rate'
+  post '/rate' => 'rater#create', :as => 'rate'
   get '/resorts/location', to: "resorts#location", as: :resort_location
   get '/resort/:id/like', to: "resorts#like", as: :resort_like
   get '/resort/:id/unlike', to: "resorts#unlike", as: :resort_unlike
